@@ -1,0 +1,325 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Gabarito — Lista 3</title>
+<link rel="stylesheet" href="../assets/style.css">
+</head>
+<body>
+<main>
+<nav class="crumbs"><a href="../index.html">Início</a> › Gabarito da Lista 3</nav>
+
+<p class="kicker">Referência · Estatística Aplicada à Eng. de Software · UniCatólica</p>
+<h1>Gabarito comentado da Lista 3</h1>
+<p class="subtitle">Para conferir <em>depois</em> de resolver à mão. Cada questão tem link para a lição do método.</p>
+
+<div class="note">
+  <p><strong>A Lista 3 é avaliativa e manuscrita</strong> (entrega em 28/09/2026, até 19h30). Use este gabarito para conferir, não para copiar.</p>
+  <p><strong>Convenções usadas</strong> (confirme com o professor):</p>
+  <p>• Desvio-padrão <strong>amostral s</strong> (n − 1); o populacional σ vai entre parênteses quando muda a conclusão ou a segunda casa.</p>
+  <p>• Pearson principal: <strong>As = 3(x̄ − Md)/s</strong>; a versão (x̄ − Mo)/s aparece ao lado. Classificação: |As| &lt; 0,15 simétrica; 0,15 a 1 moderada; &gt; 1 forte.</p>
+  <p>• Homogênea se CV ≤ 15%; 15% a 30% dispersão média; &gt; 30% heterogênea.</p>
+  <p>• Moda em classes: Czuber (a bruta aparece ao lado).</p>
+  <p>• Nas Questões 4, 5 e 6 as classes foram escolhidas por Sturges (k ≈ 7) com h redondo. Outra tabela válida dá valores um pouco diferentes.</p>
+</div>
+
+<h2>Resumo das respostas</h2>
+<div class="table-wrap"><table>
+  <tr><th>Q</th><th style="text-align:left">Resposta</th></tr>
+  <tr><td>1</td><td style="text-align:left">x̄ = Md = Mo = 25 kg · s² ≈ 10,67 · s ≈ 3,27 kg · CV ≈ 13,06%</td></tr>
+  <tr><td>2</td><td style="text-align:left">x̄ ≈ 3,06 · Mo = 3,40 · Md = 3,10 · s ≈ 0,54 · CV ≈ 17,72%: <strong>não</strong> é homogênea</td></tr>
+  <tr><td>3</td><td style="text-align:left">x̄ = 4 · Mo = 3 · Md = 4 · AT = 8 · s² ≈ 4,64 · s ≈ 2,15 · CV ≈ 53,84% · As = 0 (mediana) ou 0,46 (moda)</td></tr>
+  <tr><td>4</td><td style="text-align:left">x̄ = 45,4 · Mo ≈ 46,59 · Md ≈ 45,59 · s ≈ 7,22 · CV ≈ 15,90% · As ≈ −0,08: praticamente simétrica</td></tr>
+  <tr><td>5</td><td style="text-align:left">x̄ = 27,24 · G ≈ 26,33 · Mo ≈ 27,67 · Md ≈ 27,57 · s² ≈ 45,98 · s ≈ 6,78 · CV ≈ 24,89% · As ≈ −0,15 (limite)</td></tr>
+  <tr><td>6</td><td style="text-align:left">x̄ = 34,75 · G ≈ 34,10 · Mo ≈ 36,73 · Md ≈ 35,45 · s² ≈ 44,43 · s ≈ 6,67 · CV ≈ 19,18% · As ≈ −0,32: assimetria negativa moderada</td></tr>
+  <tr><td>7</td><td style="text-align:left">Média 99,8 ✔ · CV 5,76% ✔ · As ≈ 0,21: <strong>simetria não satisfeita</strong></td></tr>
+  <tr><td>8</td><td style="text-align:left">x̄ = 99,8 mm · Md ≈ 99,40 mm</td></tr>
+  <tr><td>9</td><td style="text-align:left">x̄ = 30,89 · s ≈ 8,22 · CV ≈ 26,61% · Md ≈ 31,18 · Mo ≈ 31,17 · As ≈ −0,11: praticamente simétrica</td></tr>
+  <tr><td>10</td><td style="text-align:left">As ≈ −1,06 (mediana) ou −0,52 (moda): <strong>sim, assimétrica</strong> (negativa)</td></tr>
+</table></div>
+
+<h2>Questão 1: produção de milho (n = 10, amostra)</h2>
+<details><summary>Ver resolução</summary>
+<p><strong>Rol:</strong> 20 · 21 · 23 · 24 · <strong>25 · 25</strong> · 26 · 27 · 28 · 31</p>
+<p><strong>a)</strong> x̄ = 250 ÷ 10 = <strong>25 kg</strong> · Md = (25 + 25)/2 = <strong>25 kg</strong> · Mo = <strong>25 kg</strong>.</p>
+<p><strong>b)</strong> Desvios ao quadrado: 25, 16, 4, 1, 0, 0, 1, 4, 9, 36, com soma SQ = 96. s² = 96 ÷ 9 ≈ <strong>10,67 kg²</strong> e s ≈ <strong>3,27 kg</strong> (σ² = 9,6; σ ≈ 3,10).</p>
+<p><strong>c)</strong> CV = 3,27 ÷ 25 × 100 ≈ <strong>13,06%</strong>: baixa dispersão (homogênea).</p>
+<p>Método: <a href="../lessons/0005-variancia-e-desvio-padrao.html">Lição 5</a> e <a href="../lessons/0007-coeficiente-de-variacao.html">Lição 7</a>.</p>
+</details>
+
+<h2>Questão 2: cotações em 16 estabelecimentos</h2>
+<details><summary>Ver resolução</summary>
+<p><strong>Rol:</strong> 2,00 · 2,30 · 2,50 · 2,60 · 2,70 · 2,90 · 2,90 · <strong>3,00 · 3,20</strong> · 3,40 · 3,40 · 3,40 · 3,40 · 3,70 · 3,70 · 3,90</p>
+<p>x̄ = 49,00 ÷ 16 ≈ <strong>R$ 3,06</strong> · Mo = <strong>R$ 3,40</strong> (4 vezes) · Md = (3,00 + 3,20)/2 = <strong>R$ 3,10</strong>.</p>
+<p>Σx² = 154,48, então SQ = 154,48 − 49²/16 = 4,4175. s² ≈ 0,2945 e s ≈ <strong>R$ 0,54</strong> (σ ≈ 0,53).</p>
+<p>CV = 0,543 ÷ 3,0625 × 100 ≈ <strong>17,72%</strong>.</p>
+<p><strong>Homogênea?</strong> Não: CV &gt; 15% indica dispersão média, e a distribuição não é considerada homogênea pela convenção adotada.</p>
+<p>Método: <a href="../lessons/0010-homogeneidade-e-assimetria.html">Lição 10</a>.</p>
+</details>
+
+<h2>Questão 3: computadores defeituosos (48 meses)</h2>
+<details><summary>Ver resolução</summary>
+<div class="table-wrap"><table>
+  <tr><th>xᵢ</th><th>fᵢ</th><th>Fᵢ</th><th>xᵢfᵢ</th><th>xᵢ²fᵢ</th></tr>
+  <tr><td>1</td><td>5</td><td>5</td><td>5</td><td>5</td></tr>
+  <tr><td>2</td><td>8</td><td>13</td><td>16</td><td>32</td></tr>
+  <tr class="hl"><td>3</td><td>10</td><td>23</td><td>30</td><td>90</td></tr>
+  <tr class="hl"><td>4</td><td>8</td><td>31</td><td>32</td><td>128</td></tr>
+  <tr><td>5</td><td>6</td><td>37</td><td>30</td><td>150</td></tr>
+  <tr><td>6</td><td>4</td><td>41</td><td>24</td><td>144</td></tr>
+  <tr><td>7</td><td>3</td><td>44</td><td>21</td><td>147</td></tr>
+  <tr><td>8</td><td>2</td><td>46</td><td>16</td><td>128</td></tr>
+  <tr><td>9</td><td>2</td><td>48</td><td>18</td><td>162</td></tr>
+  <tr class="total"><td>Σ</td><td>48</td><td>—</td><td>192</td><td>986</td></tr>
+</table></div>
+<p>x̄ = 192 ÷ 48 = <strong>4</strong> · Mo = <strong>3</strong> (fᵢ = 10) · Md: n = 48 é par, e as posições 24 e 25 caem no valor 4 (Fᵢ vai de 23 a 31), então Md = <strong>4</strong> · AT = 9 − 1 = <strong>8</strong>.</p>
+<p>SQ = 986 − 192²/48 = 218. s² = 218 ÷ 47 ≈ <strong>4,64</strong> e s ≈ <strong>2,15</strong> computadores (σ² ≈ 4,54; σ ≈ 2,13). CV ≈ <strong>53,84%</strong>: alta dispersão.</p>
+<p><strong>Pearson:</strong> 3(x̄ − Md)/s = 3(4 − 4)/2,15 = <strong>0</strong>. Com a moda: (4 − 3)/2,15 ≈ <strong>0,46</strong>, assimetria positiva moderada.</p>
+<p><strong>É simétrica?</strong> As duas fórmulas discordam. A distribuição tem pico em 3 e cauda longa à direita (até 9), o que indica <strong>assimetria positiva</strong>; a versão da mediana dá zero porque, em dados discretos, média e mediana coincidiram por acaso. Na resposta, apresente o coeficiente da fórmula que o professor adota e comente a cauda.</p>
+<p>Método: <a href="../lessons/0010-homogeneidade-e-assimetria.html">Lição 10</a>.</p>
+</details>
+
+<h2>Questão 4: mudas de eucalipto (n = 50)</h2>
+<details><summary>Ver resolução</summary>
+<p>AT = 59 − 31 = 28. Sturges: k ≈ 6,6. Adotado h = 5 a partir de 30, com 6 classes (ver <a href="../lessons/0008-montando-classes-e-histograma.html">Lição 8</a>).</p>
+<div class="table-wrap"><table>
+  <tr><th>Classe (cm)</th><th>xᵢ</th><th>fᵢ</th><th>Fᵢ</th><th>xᵢfᵢ</th><th>xᵢ²fᵢ</th></tr>
+  <tr><td>30 ├ 35</td><td>32,5</td><td>3</td><td>3</td><td>97,5</td><td>3 168,75</td></tr>
+  <tr><td>35 ├ 40</td><td>37,5</td><td>10</td><td>13</td><td>375</td><td>14 062,5</td></tr>
+  <tr><td>40 ├ 45</td><td>42,5</td><td>10</td><td>23</td><td>425</td><td>18 062,5</td></tr>
+  <tr class="hl"><td>45 ├ 50</td><td>47,5</td><td>17</td><td>40</td><td>807,5</td><td>38 356,25</td></tr>
+  <tr><td>50 ├ 55</td><td>52,5</td><td>2</td><td>42</td><td>105</td><td>5 512,5</td></tr>
+  <tr><td>55 ├ 60</td><td>57,5</td><td>8</td><td>50</td><td>460</td><td>26 450</td></tr>
+  <tr class="total"><td>Σ</td><td></td><td>50</td><td>—</td><td>2 270</td><td>105 612,5</td></tr>
+</table></div>
+<figure class="chart">
+<svg class="hist" viewBox="0 0 560 300" role="img" aria-label="Histograma: Questão 4">
+<line class="grid" x1="48" x2="544" y1="254.0" y2="254.0"/><text class="tick" x="42" y="258.0" text-anchor="end">0</text>
+<line class="grid" x1="48" x2="544" y1="194.5" y2="194.5"/><text class="tick" x="42" y="198.5" text-anchor="end">5</text>
+<line class="grid" x1="48" x2="544" y1="135.0" y2="135.0"/><text class="tick" x="42" y="139.0" text-anchor="end">10</text>
+<line class="grid" x1="48" x2="544" y1="75.5" y2="75.5"/><text class="tick" x="42" y="79.5" text-anchor="end">15</text>
+<line class="grid" x1="48" x2="544" y1="16.0" y2="16.0"/><text class="tick" x="42" y="20.0" text-anchor="end">20</text>
+<rect x="48.0" y="218.3" width="82.7" height="35.7"/><text class="val" x="89.3" y="213.3" text-anchor="middle">3</text>
+<rect x="130.7" y="135.0" width="82.7" height="119.0"/><text class="val" x="172.0" y="130.0" text-anchor="middle">10</text>
+<rect x="213.3" y="135.0" width="82.7" height="119.0"/><text class="val" x="254.7" y="130.0" text-anchor="middle">10</text>
+<rect x="296.0" y="51.7" width="82.7" height="202.3"/><text class="val" x="337.3" y="46.7" text-anchor="middle">17</text>
+<rect x="378.7" y="230.2" width="82.7" height="23.8"/><text class="val" x="420.0" y="225.2" text-anchor="middle">2</text>
+<rect x="461.3" y="158.8" width="82.7" height="95.2"/><text class="val" x="502.7" y="153.8" text-anchor="middle">8</text>
+<text class="tick" x="48.0" y="270" text-anchor="middle">30</text>
+<text class="tick" x="130.7" y="270" text-anchor="middle">35</text>
+<text class="tick" x="213.3" y="270" text-anchor="middle">40</text>
+<text class="tick" x="296.0" y="270" text-anchor="middle">45</text>
+<text class="tick" x="378.7" y="270" text-anchor="middle">50</text>
+<text class="tick" x="461.3" y="270" text-anchor="middle">55</text>
+<text class="tick" x="544.0" y="270" text-anchor="middle">60</text>
+<line class="axis" x1="48" x2="544" y1="254" y2="254"/>
+<text class="lab" x="296.0" y="294" text-anchor="middle">Tamanho da muda (cm)</text>
+<text class="lab" x="12" y="135.0" text-anchor="middle" transform="rotate(-90 12 135.0)">fᵢ</text>
+</svg>
+<figcaption>Histograma da Questão 4</figcaption>
+</figure>
+<p><strong>a)</strong> x̄ = 2 270 ÷ 50 = <strong>45,4 cm</strong>. Classe modal 45 ├ 50: Czuber = 45 + 7/(7 + 15) · 5 ≈ <strong>46,59 cm</strong> (bruta: 47,5). Md = 45 + (25 − 23)/17 · 5 ≈ <strong>45,59 cm</strong>.</p>
+<p><strong>b)</strong> SQ = 105 612,5 − 2 270²/50 = 2 554,5. s² ≈ 52,13 e s ≈ <strong>7,22 cm</strong> (σ ≈ 7,15). CV ≈ <strong>15,90%</strong>.</p>
+<p><strong>c)</strong> As = 3(45,4 − 45,59)/7,22 ≈ <strong>−0,08</strong>: |As| &lt; 0,15, <strong>praticamente simétrica</strong>. (Com a moda de Czuber: −0,16, levemente assimétrica à esquerda.)</p>
+<p>Conferência pelos dados brutos: x̄ = 44,98, Md = 45 e Mo = 45, também simétrica.</p>
+</details>
+
+<h2>Questão 5: chuva em 50 meses</h2>
+<details><summary>Ver resolução</summary>
+<p>AT = 40,9 − 13,0 = 27,9. Sturges: k ≈ 6,6, arredondado para 7. h = 27,9/7 ≈ 3,99, arredondado para 4, a partir de 13.</p>
+<div class="table-wrap"><table>
+  <tr><th>Classe (mm)</th><th>xᵢ</th><th>fᵢ</th><th>Fᵢ</th><th>xᵢfᵢ</th><th>xᵢ²fᵢ</th><th>fᵢ log xᵢ</th></tr>
+  <tr><td>13 ├ 17</td><td>15</td><td>5</td><td>5</td><td>75</td><td>1 125</td><td>5,8805</td></tr>
+  <tr><td>17 ├ 21</td><td>19</td><td>5</td><td>10</td><td>95</td><td>1 805</td><td>6,3938</td></tr>
+  <tr><td>21 ├ 25</td><td>23</td><td>6</td><td>16</td><td>138</td><td>3 174</td><td>8,1704</td></tr>
+  <tr class="hl"><td>25 ├ 29</td><td>27</td><td>14</td><td>30</td><td>378</td><td>10 206</td><td>20,0391</td></tr>
+  <tr><td>29 ├ 33</td><td>31</td><td>10</td><td>40</td><td>310</td><td>9 610</td><td>14,9136</td></tr>
+  <tr><td>33 ├ 37</td><td>35</td><td>6</td><td>46</td><td>210</td><td>7 350</td><td>9,2644</td></tr>
+  <tr><td>37 ├ 41</td><td>39</td><td>4</td><td>50</td><td>156</td><td>6 084</td><td>6,3643</td></tr>
+  <tr class="total"><td>Σ</td><td></td><td>50</td><td>—</td><td>1 362</td><td>39 354</td><td>71,0260</td></tr>
+</table></div>
+<figure class="chart">
+<svg class="hist" viewBox="0 0 560 300" role="img" aria-label="Histograma: Questão 5">
+<line class="grid" x1="48" x2="544" y1="254.0" y2="254.0"/><text class="tick" x="42" y="258.0" text-anchor="end">0</text>
+<line class="grid" x1="48" x2="544" y1="174.7" y2="174.7"/><text class="tick" x="42" y="178.7" text-anchor="end">5</text>
+<line class="grid" x1="48" x2="544" y1="95.3" y2="95.3"/><text class="tick" x="42" y="99.3" text-anchor="end">10</text>
+<line class="grid" x1="48" x2="544" y1="16.0" y2="16.0"/><text class="tick" x="42" y="20.0" text-anchor="end">15</text>
+<rect x="48.0" y="174.7" width="70.9" height="79.3"/><text class="val" x="83.4" y="169.7" text-anchor="middle">5</text>
+<rect x="118.9" y="174.7" width="70.9" height="79.3"/><text class="val" x="154.3" y="169.7" text-anchor="middle">5</text>
+<rect x="189.7" y="158.8" width="70.9" height="95.2"/><text class="val" x="225.1" y="153.8" text-anchor="middle">6</text>
+<rect x="260.6" y="31.9" width="70.9" height="222.1"/><text class="val" x="296.0" y="26.9" text-anchor="middle">14</text>
+<rect x="331.4" y="95.3" width="70.9" height="158.7"/><text class="val" x="366.9" y="90.3" text-anchor="middle">10</text>
+<rect x="402.3" y="158.8" width="70.9" height="95.2"/><text class="val" x="437.7" y="153.8" text-anchor="middle">6</text>
+<rect x="473.1" y="190.5" width="70.9" height="63.5"/><text class="val" x="508.6" y="185.5" text-anchor="middle">4</text>
+<text class="tick" x="48.0" y="270" text-anchor="middle">13</text>
+<text class="tick" x="118.9" y="270" text-anchor="middle">17</text>
+<text class="tick" x="189.7" y="270" text-anchor="middle">21</text>
+<text class="tick" x="260.6" y="270" text-anchor="middle">25</text>
+<text class="tick" x="331.4" y="270" text-anchor="middle">29</text>
+<text class="tick" x="402.3" y="270" text-anchor="middle">33</text>
+<text class="tick" x="473.1" y="270" text-anchor="middle">37</text>
+<text class="tick" x="544.0" y="270" text-anchor="middle">41</text>
+<line class="axis" x1="48" x2="544" y1="254" y2="254"/>
+<text class="lab" x="296.0" y="294" text-anchor="middle">Chuva mensal (mm)</text>
+<text class="lab" x="12" y="135.0" text-anchor="middle" transform="rotate(-90 12 135.0)">fᵢ</text>
+</svg>
+<figcaption>Histograma da Questão 5</figcaption>
+</figure>
+<p><strong>a)</strong> x̄ = 1 362 ÷ 50 = <strong>27,24 mm</strong> · G = 10<sup>71,026/50</sup> ≈ <strong>26,33 mm</strong> · Mo (Czuber) = 25 + 8/(8 + 4) · 4 ≈ <strong>27,67 mm</strong> (bruta: 27) · Md = 25 + (25 − 16)/14 · 4 ≈ <strong>27,57 mm</strong>.</p>
+<p><strong>b)</strong> SQ = 39 354 − 1 362²/50 = 2 253,12. s² ≈ <strong>45,98 mm²</strong>, s ≈ <strong>6,78 mm</strong> (σ ≈ 6,71). CV ≈ <strong>24,89%</strong> (dispersão média).</p>
+<p><strong>c)</strong> As = 3(27,24 − 27,57)/6,78 ≈ <strong>−0,147</strong>, bem no limite de 0,15: distribuição <strong>praticamente simétrica, com leve tendência à esquerda</strong> (x̄ &lt; Md &lt; Mo). Com a moda de Czuber: −0,06.</p>
+<p><strong>Interpretação:</strong> a chuva mensal gira em torno de 27 mm, com variação média (CV ≈ 25%) e poucos meses muito secos puxando a média levemente para baixo.</p>
+<p>Conferência pelos dados brutos: x̄ = 27,40, Md = 28,05, s ≈ 7,00, G ≈ 26,44 (os dados brutos são multimodais: 14,6, 22,1, 28,7, 30,1 e 36,8 aparecem duas vezes cada).</p>
+</details>
+
+<h2>Questão 6: tempo do pedreiro (n = 60)</h2>
+<details><summary>Ver resolução</summary>
+<p>AT = 47 − 20 = 27. Sturges: k ≈ 6,9. Com h = 4 a partir de 20 (7 classes), duas classes empatam em fᵢ = 14 (distribuição bimodal), o que complica a moda. Adotado <strong>h = 5 a partir de 20</strong>, com 6 classes.</p>
+<div class="table-wrap"><table>
+  <tr><th>Classe (min)</th><th>xᵢ</th><th>fᵢ</th><th>Fᵢ</th><th>xᵢfᵢ</th><th>xᵢ²fᵢ</th><th>fᵢ log xᵢ</th></tr>
+  <tr><td>20 ├ 25</td><td>22,5</td><td>5</td><td>5</td><td>112,5</td><td>2 531,25</td><td>6,7609</td></tr>
+  <tr><td>25 ├ 30</td><td>27,5</td><td>10</td><td>15</td><td>275</td><td>7 562,5</td><td>14,3933</td></tr>
+  <tr><td>30 ├ 35</td><td>32,5</td><td>13</td><td>28</td><td>422,5</td><td>13 731,25</td><td>19,6545</td></tr>
+  <tr class="hl"><td>35 ├ 40</td><td>37,5</td><td>22</td><td>50</td><td>825</td><td>30 937,5</td><td>34,6287</td></tr>
+  <tr><td>40 ├ 45</td><td>42,5</td><td>5</td><td>55</td><td>212,5</td><td>9 031,25</td><td>8,1419</td></tr>
+  <tr><td>45 ├ 50</td><td>47,5</td><td>5</td><td>60</td><td>237,5</td><td>11 281,25</td><td>8,3835</td></tr>
+  <tr class="total"><td>Σ</td><td></td><td>60</td><td>—</td><td>2 085</td><td>75 075</td><td>91,9628</td></tr>
+</table></div>
+<figure class="chart">
+<svg class="hist" viewBox="0 0 560 300" role="img" aria-label="Histograma: Questão 6">
+<line class="grid" x1="48" x2="544" y1="254.0" y2="254.0"/><text class="tick" x="42" y="258.0" text-anchor="end">0</text>
+<line class="grid" x1="48" x2="544" y1="206.4" y2="206.4"/><text class="tick" x="42" y="210.4" text-anchor="end">5</text>
+<line class="grid" x1="48" x2="544" y1="158.8" y2="158.8"/><text class="tick" x="42" y="162.8" text-anchor="end">10</text>
+<line class="grid" x1="48" x2="544" y1="111.2" y2="111.2"/><text class="tick" x="42" y="115.2" text-anchor="end">15</text>
+<line class="grid" x1="48" x2="544" y1="63.6" y2="63.6"/><text class="tick" x="42" y="67.6" text-anchor="end">20</text>
+<line class="grid" x1="48" x2="544" y1="16.0" y2="16.0"/><text class="tick" x="42" y="20.0" text-anchor="end">25</text>
+<rect x="48.0" y="206.4" width="82.7" height="47.6"/><text class="val" x="89.3" y="201.4" text-anchor="middle">5</text>
+<rect x="130.7" y="158.8" width="82.7" height="95.2"/><text class="val" x="172.0" y="153.8" text-anchor="middle">10</text>
+<rect x="213.3" y="130.2" width="82.7" height="123.8"/><text class="val" x="254.7" y="125.2" text-anchor="middle">13</text>
+<rect x="296.0" y="44.6" width="82.7" height="209.4"/><text class="val" x="337.3" y="39.6" text-anchor="middle">22</text>
+<rect x="378.7" y="206.4" width="82.7" height="47.6"/><text class="val" x="420.0" y="201.4" text-anchor="middle">5</text>
+<rect x="461.3" y="206.4" width="82.7" height="47.6"/><text class="val" x="502.7" y="201.4" text-anchor="middle">5</text>
+<text class="tick" x="48.0" y="270" text-anchor="middle">20</text>
+<text class="tick" x="130.7" y="270" text-anchor="middle">25</text>
+<text class="tick" x="213.3" y="270" text-anchor="middle">30</text>
+<text class="tick" x="296.0" y="270" text-anchor="middle">35</text>
+<text class="tick" x="378.7" y="270" text-anchor="middle">40</text>
+<text class="tick" x="461.3" y="270" text-anchor="middle">45</text>
+<text class="tick" x="544.0" y="270" text-anchor="middle">50</text>
+<line class="axis" x1="48" x2="544" y1="254" y2="254"/>
+<text class="lab" x="296.0" y="294" text-anchor="middle">Tempo da tarefa (min)</text>
+<text class="lab" x="12" y="135.0" text-anchor="middle" transform="rotate(-90 12 135.0)">fᵢ</text>
+</svg>
+<figcaption>Histograma da Questão 6</figcaption>
+</figure>
+<p><strong>a)</strong> x̄ = 2 085 ÷ 60 = <strong>34,75 min</strong> · G = 10<sup>91,9628/60</sup> ≈ <strong>34,10 min</strong> · Mo (Czuber) = 35 + 9/(9 + 17) · 5 ≈ <strong>36,73 min</strong> (bruta: 37,5) · Md = 35 + (30 − 28)/22 · 5 ≈ <strong>35,45 min</strong>.</p>
+<p><strong>b)</strong> SQ = 75 075 − 2 085²/60 = 2 621,25. s² ≈ <strong>44,43 min²</strong>, s ≈ <strong>6,67 min</strong> (σ ≈ 6,61). CV ≈ <strong>19,18%</strong> (dispersão média).</p>
+<p><strong>c)</strong> As = 3(34,75 − 35,45)/6,67 ≈ <strong>−0,32</strong> (com a moda: −0,30). <strong>Assimetria negativa moderada</strong>: a maioria das tarefas leva de 35 a 40 min, e algumas execuções bem mais rápidas (20–30 min) formam a cauda à esquerda.</p>
+<p>Conferência pelos dados brutos: x̄ = 34,15, Md = 35, Mo = 35, s ≈ 6,58, G ≈ 33,50, também com assimetria negativa.</p>
+</details>
+
+<h2>Questão 7: especificação das peças</h2>
+<details><summary>Ver resolução</summary>
+<div class="table-wrap"><table>
+  <tr><th>Classe (mm)</th><th>xᵢ</th><th>fᵢ</th><th>Fᵢ</th><th>xᵢfᵢ</th><th>xᵢ²fᵢ</th></tr>
+  <tr><td>80 ├ 85</td><td>82,5</td><td>1</td><td>1</td><td>82,5</td><td>6 806,25</td></tr>
+  <tr><td>85 ├ 90</td><td>87,5</td><td>3</td><td>4</td><td>262,5</td><td>22 968,75</td></tr>
+  <tr><td>90 ├ 95</td><td>92,5</td><td>9</td><td>13</td><td>832,5</td><td>77 006,25</td></tr>
+  <tr class="hl"><td>95 ├ 100</td><td>97,5</td><td>42</td><td>55</td><td>4 095</td><td>399 262,5</td></tr>
+  <tr><td>100 ├ 105</td><td>102,5</td><td>34</td><td>89</td><td>3 485</td><td>357 212,5</td></tr>
+  <tr><td>105 ├ 110</td><td>107,5</td><td>5</td><td>94</td><td>537,5</td><td>57 781,25</td></tr>
+  <tr><td>110 ├ 115</td><td>112,5</td><td>4</td><td>98</td><td>450</td><td>50 625</td></tr>
+  <tr><td>115 ├ 120</td><td>117,5</td><td>2</td><td>100</td><td>235</td><td>27 612,5</td></tr>
+  <tr class="total"><td>Σ</td><td></td><td>100</td><td>—</td><td>9 980</td><td>999 275</td></tr>
+</table></div>
+<p><strong>Média</strong> = 99,8 mm: está entre 98 e 102 ✔.</p>
+<p><strong>CV:</strong> SQ = 999 275 − 9 980²/100 = 3 271, então s ≈ 5,75 e CV ≈ 5,76% &lt; 10% ✔.</p>
+<p><strong>Simetria:</strong> Md ≈ 99,40, e As = 3(99,8 − 99,40)/5,75 ≈ 0,21, assimetria positiva moderada ✘.</p>
+<p><strong>Resposta:</strong> a exigência <strong>não satisfeita é a de simetria</strong>. (Com a moda de Czuber, As ≈ 0,135 e todas seriam satisfeitas. Veja a discussão na <a href="../lessons/0010-homogeneidade-e-assimetria.html">Lição 10</a>.)</p>
+</details>
+
+<h2>Questão 8: média e mediana da Tabela 2</h2>
+<details><summary>Ver resolução</summary>
+<p>x̄ = 9 980 ÷ 100 = <strong>99,8 mm</strong>.</p>
+<p>Md: n/2 = 50, na classe 95 ├ 100 (Fant = 13, fmd = 42). Md = 95 + (50 − 13)/42 · 5 ≈ <strong>99,40 mm</strong>.</p>
+<p>Método: <a href="../lessons/0003-media-de-dados-agrupados.html">Lição 3</a> e <a href="../lessons/0004-mediana-e-moda-em-classes.html">Lição 4</a>.</p>
+</details>
+
+<h2>Questão 9: acertos de 400 candidatos</h2>
+<details><summary>Ver resolução</summary>
+<p>A 2ª classe aparece no PDF como "12 ├ 6", um erro de digitação: é <strong>12 ├ 16</strong> (h = 4 em todas).</p>
+<figure class="chart">
+<svg class="hist" viewBox="0 0 560 300" role="img" aria-label="Histograma: Questão 9">
+<line class="grid" x1="48" x2="544" y1="254.0" y2="254.0"/><text class="tick" x="42" y="258.0" text-anchor="end">0</text>
+<line class="grid" x1="48" x2="544" y1="206.4" y2="206.4"/><text class="tick" x="42" y="210.4" text-anchor="end">20</text>
+<line class="grid" x1="48" x2="544" y1="158.8" y2="158.8"/><text class="tick" x="42" y="162.8" text-anchor="end">40</text>
+<line class="grid" x1="48" x2="544" y1="111.2" y2="111.2"/><text class="tick" x="42" y="115.2" text-anchor="end">60</text>
+<line class="grid" x1="48" x2="544" y1="63.6" y2="63.6"/><text class="tick" x="42" y="67.6" text-anchor="end">80</text>
+<line class="grid" x1="48" x2="544" y1="16.0" y2="16.0"/><text class="tick" x="42" y="20.0" text-anchor="end">100</text>
+<rect x="48.0" y="230.2" width="45.1" height="23.8"/><text class="val" x="70.5" y="225.2" text-anchor="middle">10</text>
+<rect x="93.1" y="225.4" width="45.1" height="28.6"/><text class="val" x="115.6" y="220.4" text-anchor="middle">12</text>
+<rect x="138.2" y="211.2" width="45.1" height="42.8"/><text class="val" x="160.7" y="206.2" text-anchor="middle">18</text>
+<rect x="183.3" y="182.6" width="45.1" height="71.4"/><text class="val" x="205.8" y="177.6" text-anchor="middle">30</text>
+<rect x="228.4" y="130.2" width="45.1" height="123.8"/><text class="val" x="250.9" y="125.2" text-anchor="middle">52</text>
+<rect x="273.5" y="20.8" width="45.1" height="233.2"/><text class="val" x="296.0" y="15.8" text-anchor="middle">98</text>
+<rect x="318.5" y="49.3" width="45.1" height="204.7"/><text class="val" x="341.1" y="44.3" text-anchor="middle">86</text>
+<rect x="363.6" y="149.3" width="45.1" height="104.7"/><text class="val" x="386.2" y="144.3" text-anchor="middle">44</text>
+<rect x="408.7" y="187.4" width="45.1" height="66.6"/><text class="val" x="431.3" y="182.4" text-anchor="middle">28</text>
+<rect x="453.8" y="218.3" width="45.1" height="35.7"/><text class="val" x="476.4" y="213.3" text-anchor="middle">15</text>
+<rect x="498.9" y="237.3" width="45.1" height="16.7"/><text class="val" x="521.5" y="232.3" text-anchor="middle">7</text>
+<text class="tick" x="48.0" y="270" text-anchor="middle">8</text>
+<text class="tick" x="93.1" y="270" text-anchor="middle">12</text>
+<text class="tick" x="138.2" y="270" text-anchor="middle">16</text>
+<text class="tick" x="183.3" y="270" text-anchor="middle">20</text>
+<text class="tick" x="228.4" y="270" text-anchor="middle">24</text>
+<text class="tick" x="273.5" y="270" text-anchor="middle">28</text>
+<text class="tick" x="318.5" y="270" text-anchor="middle">32</text>
+<text class="tick" x="363.6" y="270" text-anchor="middle">36</text>
+<text class="tick" x="408.7" y="270" text-anchor="middle">40</text>
+<text class="tick" x="453.8" y="270" text-anchor="middle">44</text>
+<text class="tick" x="498.9" y="270" text-anchor="middle">48</text>
+<text class="tick" x="544.0" y="270" text-anchor="middle">52</text>
+<line class="axis" x1="48" x2="544" y1="254" y2="254"/>
+<text class="lab" x="296.0" y="294" text-anchor="middle">Número de acertos</text>
+<text class="lab" x="12" y="135.0" text-anchor="middle" transform="rotate(-90 12 135.0)">Nº de candidatos</text>
+</svg>
+<figcaption>a) Histograma da Questão 9</figcaption>
+</figure>
+<div class="table-wrap"><table>
+  <tr><th>Classe</th><th>xᵢ</th><th>fᵢ</th><th>Fᵢ</th><th>xᵢfᵢ</th><th>xᵢ²fᵢ</th></tr>
+  <tr><td>8 ├ 12</td><td>10</td><td>10</td><td>10</td><td>100</td><td>1 000</td></tr>
+  <tr><td>12 ├ 16</td><td>14</td><td>12</td><td>22</td><td>168</td><td>2 352</td></tr>
+  <tr><td>16 ├ 20</td><td>18</td><td>18</td><td>40</td><td>324</td><td>5 832</td></tr>
+  <tr><td>20 ├ 24</td><td>22</td><td>30</td><td>70</td><td>660</td><td>14 520</td></tr>
+  <tr><td>24 ├ 28</td><td>26</td><td>52</td><td>122</td><td>1 352</td><td>35 152</td></tr>
+  <tr class="hl"><td>28 ├ 32</td><td>30</td><td>98</td><td>220</td><td>2 940</td><td>88 200</td></tr>
+  <tr><td>32 ├ 36</td><td>34</td><td>86</td><td>306</td><td>2 924</td><td>99 416</td></tr>
+  <tr><td>36 ├ 40</td><td>38</td><td>44</td><td>350</td><td>1 672</td><td>63 536</td></tr>
+  <tr><td>40 ├ 44</td><td>42</td><td>28</td><td>378</td><td>1 176</td><td>49 392</td></tr>
+  <tr><td>44 ├ 48</td><td>46</td><td>15</td><td>393</td><td>690</td><td>31 740</td></tr>
+  <tr><td>48 ├ 52</td><td>50</td><td>7</td><td>400</td><td>350</td><td>17 500</td></tr>
+  <tr class="total"><td>Σ</td><td></td><td>400</td><td>—</td><td>12 356</td><td>408 640</td></tr>
+</table></div>
+<p><strong>b)</strong> x̄ = 12 356 ÷ 400 = <strong>30,89 acertos</strong>. SQ = 408 640 − 12 356²/400 = 26 963,16. s² ≈ 67,58 e s ≈ <strong>8,22</strong> (σ ≈ 8,21). CV ≈ <strong>26,61%</strong>.</p>
+<p><strong>c)</strong> Md: n/2 = 200, na classe 28 ├ 32 (Fant = 122, fmd = 98). Md = 28 + 78/98 · 4 ≈ <strong>31,18</strong>. Mo (Czuber) = 28 + 46/(46 + 12) · 4 ≈ <strong>31,17</strong> (bruta: 30).</p>
+<p><strong>d)</strong> As = 3(30,89 − 31,18)/8,22 ≈ <strong>−0,11</strong> (com a moda: −0,03). |As| &lt; 0,15: <strong>praticamente simétrica</strong>, com leve cauda à esquerda. A maioria dos candidatos acerta entre 24 e 40 questões, e o desempenho se distribui de forma equilibrada em torno de 31.</p>
+</details>
+
+<h2>Questão 10: espessura de 12 chapas</h2>
+<details><summary>Ver resolução</summary>
+<p><strong>Rol:</strong> 6,20 · 6,28 · 6,30 · 6,34 · 6,36 · <strong>6,36 · 6,38</strong> · 6,38 · 6,38 · 6,38 · 6,40 · 6,42</p>
+<p>x̄ = 76,18 ÷ 12 ≈ 6,3483 mm · Md = (6,36 + 6,38)/2 = 6,37 mm · Mo = 6,38 mm (4 vezes).</p>
+<p>Σx² = 483,6572, então SQ = 483,6572 − 76,18²/12 ≈ 0,04117. s² ≈ 0,003742 e s ≈ 0,0612 mm.</p>
+<p>As = 3(6,3483 − 6,37)/0,0612 ≈ <strong>−1,06</strong>: assimetria <strong>negativa forte</strong>. (Com a moda: (6,3483 − 6,38)/0,0612 ≈ −0,52, negativa moderada.)</p>
+<p><strong>Resposta:</strong> sim, a distribuição é assimétrica, com assimetria negativa: a chapa de 6,20 mm (e as de 6,28 e 6,30) formam uma cauda à esquerda e puxam a média para baixo da mediana.</p>
+</details>
+
+<nav class="lesson-nav">
+  <a href="gabarito-lista-2.html">← Gabarito da Lista 2</a>
+  <a href="../index.html">Início →</a>
+</nav>
+</main>
+<script src="../assets/print-details.js"></script>
+</body>
+</html>

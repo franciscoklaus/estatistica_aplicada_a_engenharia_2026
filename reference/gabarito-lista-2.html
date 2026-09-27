@@ -1,0 +1,118 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Gabarito — Lista 2</title>
+<link rel="stylesheet" href="../assets/style.css">
+</head>
+<body>
+<main>
+<nav class="crumbs"><a href="../index.html">Início</a> › Gabarito da Lista 2</nav>
+
+<p class="kicker">Referência · Estatística Aplicada à Eng. de Software · UniCatólica</p>
+<h1>Gabarito comentado da Lista 2</h1>
+<p class="subtitle">Para conferir <em>depois</em> de resolver à mão. Cada questão tem link para a lição do método.</p>
+
+<div class="note">
+  <p><strong>A Lista 2 é avaliativa e manuscrita.</strong> Use este gabarito para conferir as suas contas, não para copiar: na entrega, o que conta é o desenvolvimento.</p>
+  <p><strong>Desvio-padrão:</strong> o valor principal é o <strong>amostral (s, divide por n − 1)</strong>, padrão do OpenStax e do NIST. Entre parênteses vai o <strong>populacional (σ, divide por n)</strong>. A lista não diz qual quer; confirme com o professor.</p>
+</div>
+
+<h2>Resumo das respostas</h2>
+<div class="table-wrap"><table>
+  <tr><th>Questão</th><th style="text-align:left">Resposta</th></tr>
+  <tr><td>1</td><td style="text-align:left">x̄ = 2,607% · Md = 2,615% · Mo = 2,64% · s ≈ 0,0525 (σ ≈ 0,0498)</td></tr>
+  <tr><td>2</td><td style="text-align:left">s² ≈ 153,23 (σ² ≈ 151,18) · s ≈ 12,38 m³ (σ ≈ 12,30)</td></tr>
+  <tr><td>3</td><td style="text-align:left">x̄ ≈ 16,43 · Md ≈ 16,39 · moda em 15 ├ 20 · s ≈ 6,36 (σ ≈ 6,32) · CV ≈ 38,74% (38,46%)</td></tr>
+  <tr><td>4</td><td style="text-align:left">x̄ ≈ 1,02 L · 61,40% · modal e mediano em 0,5 ├ 1,0 · lucro ≈ R$ 0,51 · s ≈ 0,613 L (σ ≈ 0,607)</td></tr>
+  <tr><td>5</td><td style="text-align:left">x̄ = 59,6 · Md = 63 · Mo = 67 · s ≈ 10,48 (σ ≈ 9,94) · CV ≈ 17,58% (16,68%)</td></tr>
+</table></div>
+
+<h2>Questão 1: taxas de juros de 10 ações</h2>
+<details><summary>Ver resolução</summary>
+<p><strong>Rol:</strong> 2,50 · 2,55 · 2,59 · 2,60 · <strong>2,61 · 2,62</strong> · 2,63 · 2,64 · 2,64 · 2,69</p>
+<p><strong>a) Média:</strong> Σx = 26,07; x̄ = 26,07 ÷ 10 = <strong>2,607%</strong>.</p>
+<p><strong>b) Mediana:</strong> n = 10 é par; média do 5º e do 6º: (2,61 + 2,62) ÷ 2 = <strong>2,615%</strong>.</p>
+<p><strong>c) Moda:</strong> 2,64% (aparece duas vezes; todas as outras, uma).</p>
+<p><strong>d) Desvio-padrão:</strong> Σx² = 67,9893, então SQ = 67,9893 − 26,07²/10 = 0,02481.</p>
+<p>s² = 0,02481 ÷ 9 ≈ 0,002757 e <strong>s ≈ 0,0525</strong> ponto percentual (σ² = 0,002481; σ ≈ 0,0498).</p>
+<p>Método: <a href="../lessons/0005-variancia-e-desvio-padrao.html">Lição 5</a>.</p>
+</details>
+
+<h2>Questão 2: consumo de água (75 contas)</h2>
+<details><summary>Ver resolução</summary>
+<div class="table-wrap"><table>
+  <tr><th>Classe (m³)</th><th>xᵢ</th><th>fᵢ</th><th>xᵢfᵢ</th><th>xᵢ²fᵢ</th></tr>
+  <tr><td>0 ├ 10</td><td>5</td><td>2</td><td>10</td><td>50</td></tr>
+  <tr><td>10 ├ 20</td><td>15</td><td>27</td><td>405</td><td>6 075</td></tr>
+  <tr><td>20 ├ 30</td><td>25</td><td>19</td><td>475</td><td>11 875</td></tr>
+  <tr><td>30 ├ 40</td><td>35</td><td>16</td><td>560</td><td>19 600</td></tr>
+  <tr><td>40 ├ 50</td><td>45</td><td>7</td><td>315</td><td>14 175</td></tr>
+  <tr><td>50 ├ 60</td><td>55</td><td>4</td><td>220</td><td>12 100</td></tr>
+  <tr class="total"><td>Σ</td><td></td><td>75</td><td>1 985</td><td>63 875</td></tr>
+</table></div>
+<p>x̄ = 1 985 ÷ 75 ≈ 26,47 m³ · SQ = 63 875 − 1 985²/75 ≈ 11 338,67.</p>
+<p><strong>Variância:</strong> s² = 11 338,67 ÷ 74 ≈ <strong>153,23 (m³)²</strong> (σ² = 11 338,67 ÷ 75 ≈ 151,18).</p>
+<p><strong>Desvio-padrão:</strong> s ≈ <strong>12,38 m³</strong> (σ ≈ 12,30).</p>
+<p>O enunciado diz "variância absoluta": é a variância comum (em unidade ao quadrado), em oposição a medidas <em>relativas</em> como o CV. Se quiser incluir, CV ≈ 12,38 ÷ 26,47 ≈ 46,77%.</p>
+<p>Método: <a href="../lessons/0006-dispersao-em-classes.html">Lição 6</a>.</p>
+</details>
+
+<h2>Questão 3: tempo dos filhotes no ninho</h2>
+<details><summary>Ver resolução</summary>
+<div class="table-wrap"><table>
+  <tr><th>Classe (dias)</th><th>xᵢ</th><th>fᵢ</th><th>Fᵢ</th><th>xᵢfᵢ</th><th>xᵢ²fᵢ</th></tr>
+  <tr><td>5 ├ 10</td><td>7,5</td><td>14</td><td>14</td><td>105</td><td>787,5</td></tr>
+  <tr><td>10 ├ 15</td><td>12,5</td><td>16</td><td>30</td><td>200</td><td>2 500</td></tr>
+  <tr class="hl"><td>15 ├ 20</td><td>17,5</td><td>18</td><td>48</td><td>315</td><td>5 512,5</td></tr>
+  <tr><td>20 ├ 25</td><td>22,5</td><td>15</td><td>63</td><td>337,5</td><td>7 593,75</td></tr>
+  <tr><td>25 ├ 30</td><td>27,5</td><td>7</td><td>70</td><td>192,5</td><td>5 293,75</td></tr>
+  <tr class="total"><td>Σ</td><td></td><td>70</td><td>—</td><td>1 150</td><td>21 687,5</td></tr>
+</table></div>
+<p><strong>a) Média:</strong> 1 150 ÷ 70 ≈ <strong>16,43 dias</strong>.</p>
+<p><strong>b) Mediana:</strong> n/2 = 35, na classe 15 ├ 20 (Fant = 30, fmd = 18). Md = 15 + (35 − 30)/18 · 5 ≈ <strong>16,39 dias</strong>.</p>
+<p><strong>c) Classe modal:</strong> <strong>15 ├ 20</strong> (fᵢ = 18). Se pedirem o valor: moda bruta 17,5; Czuber = 15 + 2/(2 + 3) · 5 = 17 dias.</p>
+<p><strong>d) Desvio-padrão:</strong> SQ = 21 687,5 − 1 150²/70 ≈ 2 794,64. s² ≈ 2 794,64 ÷ 69 ≈ 40,50, e <strong>s ≈ 6,36 dias</strong> (σ ≈ 6,32).</p>
+<p><strong>e) CV:</strong> 6,36 ÷ 16,43 × 100 ≈ <strong>38,74%</strong> (com σ: 38,46%).</p>
+<p>Método: <a href="../lessons/0003-media-de-dados-agrupados.html">Lição 3</a> (a), <a href="../lessons/0004-mediana-e-moda-em-classes.html">Lição 4</a> (b, c), <a href="../lessons/0006-dispersao-em-classes.html">Lição 6</a> (d), <a href="../lessons/0007-coeficiente-de-variacao.html">Lição 7</a> (e).</p>
+</details>
+
+<h2>Questão 4: consumo semanal de refrigerante</h2>
+<details><summary>Ver resolução</summary>
+<div class="table-wrap"><table>
+  <tr><th>Classe (L)</th><th>xᵢ</th><th>fᵢ</th><th>Fᵢ</th><th>xᵢfᵢ</th><th>xᵢ²fᵢ</th></tr>
+  <tr><td>0,0 ├ 0,5</td><td>0,25</td><td>10</td><td>10</td><td>2,50</td><td>0,625</td></tr>
+  <tr class="hl"><td>0,5 ├ 1,0</td><td>0,75</td><td>25</td><td>35</td><td>18,75</td><td>14,0625</td></tr>
+  <tr><td>1,0 ├ 1,5</td><td>1,25</td><td>9</td><td>44</td><td>11,25</td><td>14,0625</td></tr>
+  <tr><td>1,5 ├ 2,0</td><td>1,75</td><td>7</td><td>51</td><td>12,25</td><td>21,4375</td></tr>
+  <tr><td>2,0 ├ 2,5</td><td>2,25</td><td>6</td><td>57</td><td>13,50</td><td>30,375</td></tr>
+  <tr class="total"><td>Σ</td><td></td><td>57</td><td>—</td><td>58,25</td><td>80,5625</td></tr>
+</table></div>
+<p><strong>a) Consumo médio:</strong> 58,25 ÷ 57 ≈ <strong>1,02 L</strong> por pessoa por semana.</p>
+<p><strong>b) Menos de 1 litro:</strong> (10 + 25) ÷ 57 ≈ <strong>61,40%</strong>.</p>
+<p><strong>c) Classe modal:</strong> <strong>0,5 ├ 1,0</strong> (maior fᵢ, 25). <strong>Classe mediana:</strong> posição 57/2 = 28,5, e o Fᵢ passa de 10 para 35 em <strong>0,5 ├ 1,0</strong>. (Valores, se pedirem: Md = 0,5 + (28,5 − 10)/25 · 0,5 = 0,87 L; Czuber = 0,5 + 15/(15 + 16) · 0,5 ≈ 0,74 L.)</p>
+<p><strong>d) Lucro médio:</strong> 0,50 × 1,022 ≈ <strong>R$ 0,51</strong> por pessoa por semana (a média é multiplicada pela constante).</p>
+<p><strong>e) Desvio-padrão:</strong> SQ = 80,5625 − 58,25²/57 ≈ 21,035. s² ≈ 21,035 ÷ 56 ≈ 0,3756, e <strong>s ≈ 0,613 L</strong> (σ ≈ 0,607).</p>
+<p>Método: <a href="../lessons/0003-media-de-dados-agrupados.html">Lição 3</a>, <a href="../lessons/0004-mediana-e-moda-em-classes.html">Lição 4</a>, <a href="../lessons/0006-dispersao-em-classes.html">Lição 6</a> e <a href="../lessons/0007-coeficiente-de-variacao.html">Lição 7</a>.</p>
+</details>
+
+<h2>Questão 5: bactérias em água do mar</h2>
+<details><summary>Ver resolução</summary>
+<p><strong>Rol:</strong> 40 · 49 · 52 · 54 · <strong>59 · 67</strong> · 67 · 67 · 70 · 71</p>
+<p><strong>a)</strong> x̄ = 596 ÷ 10 = <strong>59,6</strong> · Md = (59 + 67) ÷ 2 = <strong>63</strong> · Mo = <strong>67</strong> (três vezes).</p>
+<p><strong>b)</strong> Σ(xᵢ − x̄)² = 988,4. É uma amostra, então s² = 988,4 ÷ 9 ≈ 109,82 e <strong>s ≈ 10,48</strong> bactérias/100 mL (σ ≈ 9,94).</p>
+<p><strong>c)</strong> CV = 10,48 ÷ 59,6 × 100 ≈ <strong>17,58%</strong> (com σ: 16,68%).</p>
+<p>A tabela completa de desvios está na <a href="../lessons/0005-variancia-e-desvio-padrao.html">Lição 5</a>; CV na <a href="../lessons/0007-coeficiente-de-variacao.html">Lição 7</a>.</p>
+</details>
+
+<p class="kicker" style="margin-top:2rem">"6 – Kbô!" no fim do PDF marca o fim da lista, não é uma questão.</p>
+
+<nav class="lesson-nav">
+  <a href="gabarito-lista-1.html">← Gabarito da Lista 1</a>
+  <a href="../index.html">Início →</a>
+</nav>
+</main>
+<script src="../assets/print-details.js"></script>
+</body>
+</html>

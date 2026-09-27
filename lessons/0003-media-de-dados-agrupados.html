@@ -1,0 +1,118 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Lição 3 — Média de dados agrupados</title>
+<link rel="stylesheet" href="../assets/style.css">
+</head>
+<body>
+<main>
+<nav class="crumbs"><a href="../index.html">Lista 1</a> › Lição 3</nav>
+
+<p class="kicker">Lição 3 · Questões 2, 3 e 6(a)</p>
+<h1>Média de dados agrupados</h1>
+<p class="subtitle">Quando você só sabe o intervalo, e não o valor exato, o ponto médio vira o representante da classe.</p>
+
+<div class="mission">
+  <p><strong>Por que isso importa para a sua missão:</strong> três questões da lista (2, 3 e 6) têm dados em <em>classes</em>. A pegadinha da Questão 2 é saber quando <strong>não</strong> usar o ponto médio.</p>
+</div>
+
+<p class="win"><strong>Sua vitória nesta lição:</strong> calcular a média de uma tabela em classes e ler um histograma como se fosse uma tabela.</p>
+
+<h2>1. A ideia: o ponto médio representa a classe</h2>
+<p>Numa classe como 200 ├ 250, você não sabe o consumo exato de cada família. A saída é supor que, em média, elas ficam no <strong>ponto médio</strong> da classe <a href="https://openstax.org/books/introductory-statistics-2e/pages/2-5-measures-of-the-center-of-the-data">(OpenStax, §2.5)</a>:</p>
+<p class="formula">xᵢ = <span class="frac"><span>limite inferior + limite superior</span><span>2</span></span> &emsp;&emsp; x̄ ≈ <span class="frac"><span>Σ xᵢ·fᵢ</span><span>n</span></span></p>
+<div class="note"><p>Repare no <strong>≈</strong>. Com dados agrupados, a média é uma <em>estimativa</em>, porque os valores reais dentro de cada classe se perderam. O OpenStax é explícito: com dados agrupados não dá para calcular a média exata.</p></div>
+
+<h2>2. Exemplo resolvido: Questão 6(a)</h2>
+<div class="table-wrap"><table>
+  <tr><th>Classe (kWh)</th><th>xᵢ</th><th>fᵢ</th><th>xᵢ·fᵢ</th></tr>
+  <tr><td>0 ├ 50</td><td>25</td><td>2</td><td>50</td></tr>
+  <tr><td>50 ├ 100</td><td>75</td><td>15</td><td>1 125</td></tr>
+  <tr><td>100 ├ 150</td><td>125</td><td>32</td><td>4 000</td></tr>
+  <tr><td>150 ├ 200</td><td>175</td><td>47</td><td>8 225</td></tr>
+  <tr><td>200 ├ 250</td><td>225</td><td>50</td><td>11 250</td></tr>
+  <tr><td>250 ├ 300</td><td>275</td><td>80</td><td>22 000</td></tr>
+  <tr><td>300 ├ 350</td><td>325</td><td>24</td><td>7 800</td></tr>
+  <tr class="total"><td>Σ</td><td></td><td>250</td><td>54 450</td></tr>
+</table></div>
+<p class="formula">x̄ ≈ 54 450 ÷ 250 = <strong>217,8 kWh</strong> por residência</p>
+
+<h2>3. A pegadinha da Questão 2</h2>
+<p>A tabela de arrecadação traz uma coluna extra: o <strong>valor total arrecadado</strong> em cada classe. Isso é o valor <em>real</em>, não uma estimativa.</p>
+<div class="table-wrap"><table>
+  <tr><th>Classe</th><th>Intervalo (R$)</th><th>Contribuintes</th><th>Total (R$)</th></tr>
+  <tr><td>1</td><td>0 ├ 10</td><td>600</td><td>4 800</td></tr>
+  <tr><td>2</td><td>10 ├ 20</td><td>310</td><td>4 500</td></tr>
+  <tr><td>3</td><td>20 ├ 30</td><td>80</td><td>2 000</td></tr>
+  <tr><td>4</td><td>30 ├ 40</td><td>10</td><td>350</td></tr>
+  <tr class="total"><td>Σ</td><td></td><td>1 000</td><td>11 650</td></tr>
+</table></div>
+<ol class="steps">
+  <li><strong>Afirmativa I (média = R$ 11,65):</strong> média real = total ÷ contribuintes = 11 650 ÷ 1 000 = R$ 11,65. <strong>Verdadeira.</strong><br>
+  <em>Se você usasse os pontos médios</em> (5, 15, 25, 35), teria (3 000 + 4 650 + 2 000 + 350) ÷ 1 000 = R$ 10,00: uma estimativa pior, quando o valor exato estava na tabela.</li>
+  <li><strong>Afirmativa II (média da classe 1 &lt; R$ 6,00):</strong> 4 800 ÷ 600 = R$ 8,00. <strong>Falsa.</strong></li>
+</ol>
+<div class="note"><p><strong>Regra prática:</strong> o ponto médio é o plano B. Se a tabela der o valor real (um total ou uma soma), use-o.</p></div>
+
+<h2>4. Lendo um histograma: Questão 3</h2>
+<p>Um histograma é uma tabela de classes desenhada. A base de cada barra é a classe; a altura é fᵢ. Lendo o gráfico da Questão 3:</p>
+<div class="table-wrap"><table>
+  <tr><th>Classe (R$)</th><th>xᵢ</th><th>fᵢ</th><th>xᵢ·fᵢ</th></tr>
+  <tr><td>0 ├ 500</td><td>250</td><td>10</td><td>2 500</td></tr>
+  <tr><td>500 ├ 1000</td><td>750</td><td>4</td><td>3 000</td></tr>
+  <tr><td>1000 ├ 1500</td><td>1 250</td><td>2</td><td>2 500</td></tr>
+  <tr><td>1500 ├ 2000</td><td>1 750</td><td>2</td><td>3 500</td></tr>
+  <tr><td>2000 ├ 2500</td><td>2 250</td><td>2</td><td>4 500</td></tr>
+  <tr class="total"><td>Σ</td><td></td><td>22</td><td>16 000</td></tr>
+</table></div>
+<p class="formula">x̄ ≈ 16 000 ÷ 22 ≈ <strong>R$ 727,27</strong></p>
+<div class="note"><p><strong>Atenção à leitura:</strong> o eixo vertical do gráfico está fora de escala. As três últimas barras estão na altura da marca "2", por isso usamos fᵢ = 2. Se o professor considerar essas barras com altura 1, a média muda para 10 750 ÷ 17 ≈ <strong>R$ 632,35</strong>. Vale confirmar em sala.</p></div>
+
+<h2>Pratique</h2>
+
+<div class="num" data-answer="275" data-tol="0" data-hint="(250 + 300) ÷ 2." data-why="O ponto médio de 250 ├ 300 é 275.">
+  <p class="q">1) Qual é o ponto médio da classe 250 ├ 300?</p>
+  <div class="row"><input inputmode="decimal" aria-label="resposta"><button>Conferir</button></div>
+  <p class="fb"></p>
+</div>
+
+<div class="num" data-answer="14.52" data-tol="0.01" data-hint="Use o valor real da tabela: total da classe ÷ número de contribuintes." data-why="4 500 ÷ 310 ≈ 14,52.">
+  <p class="q">2) Questão 2: qual foi o valor médio pago por contribuinte da <strong>classe 2</strong>? (duas casas decimais)</p>
+  <div class="row"><input inputmode="decimal" aria-label="resposta"><button>Conferir</button></div>
+  <p class="fb"></p>
+</div>
+
+<div class="quiz" data-answer="b">
+  <p class="q">3) Por que a média da Questão 6(a) é chamada de estimativa?</p>
+  <div class="opts">
+    <button data-opt="a" data-why="A amostra ser aleatória não é o motivo; o problema é a perda dos valores individuais.">Porque a amostra de 250 famílias foi sorteada aleatoriamente</button>
+    <button data-opt="b" data-why="Isso mesmo: o ponto médio substitui valores que a tabela não mostra.">Porque os valores dentro de cada classe são desconhecidos</button>
+    <button data-opt="c" data-why="O arredondamento é pequeno; a causa real é o agrupamento em classes.">Porque o resultado final foi arredondado para uma casa</button>
+  </div>
+  <p class="fb"></p>
+</div>
+
+<div class="num" data-answer="16" data-tol="0.01" data-hint="Pontos médios 5, 15 e 25; some xᵢ·fᵢ e divida por n = 10." data-why="(5·2 + 15·5 + 25·3) ÷ 10 = 160 ÷ 10 = 16.">
+  <p class="q">4) Problema novo: classes 0 ├ 10, 10 ├ 20 e 20 ├ 30, com fᵢ = 2, 5 e 3. Qual é a média estimada?</p>
+  <div class="row"><input inputmode="decimal" aria-label="resposta"><button>Conferir</button></div>
+  <p class="fb"></p>
+</div>
+
+<div class="source">
+  <p><strong>Fonte principal recomendada:</strong> <a href="https://openstax.org/books/introductory-statistics-2e/pages/2-5-measures-of-the-center-of-the-data">OpenStax, <em>Introductory Statistics 2e</em>, §2.5</a>. Procure o exemplo "calculating the mean of a frequency table" com pontos médios (<em>midpoints</em>).</p>
+</div>
+
+<div class="ask"><p>Não sabe se leu o histograma certo? Peça ao seu agente para conferir a sua leitura de outro gráfico.</p></div>
+
+<p>Resumo: <a href="../reference/formulario.html#agrupados">Formulário › Dados agrupados</a>.</p>
+
+<nav class="lesson-nav">
+  <a href="0002-media-mediana-moda.html">← Lição 2</a>
+  <a href="0004-mediana-e-moda-em-classes.html">Lição 4: mediana e moda em classes →</a>
+</nav>
+</main>
+<script src="../assets/quiz.js"></script>
+</body>
+</html>

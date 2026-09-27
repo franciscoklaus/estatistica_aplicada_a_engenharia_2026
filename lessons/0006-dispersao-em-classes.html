@@ -1,0 +1,109 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Lição 6 — Dispersão em classes</title>
+<link rel="stylesheet" href="../assets/style.css">
+</head>
+<body>
+<main>
+<nav class="crumbs"><a href="../index.html">Início</a> › Lista 2 › Lição 6</nav>
+
+<p class="kicker">Lição 6 · Lista 2 · Questões 2, 3(d) e 4(e)</p>
+<h1>Desvio-padrão em tabelas de classes</h1>
+<p class="subtitle">A mesma conta da Lição 5, com o ponto médio no lugar de cada valor e fᵢ como peso.</p>
+
+<div class="mission">
+  <p><strong>Por que isso importa para a sua missão:</strong> três questões da Lista 2 (2, 3 e 4) trazem os dados em classes e pedem variância ou desvio-padrão. Dominando uma, você resolve as três.</p>
+</div>
+
+<p class="win"><strong>Sua vitória nesta lição:</strong> montar a tabela xᵢ · fᵢ · xᵢfᵢ · xᵢ²fᵢ e tirar dela a média, a variância e o desvio-padrão.</p>
+
+<h2>1. O que muda em relação à Lição 5</h2>
+<ul>
+  <li>Cada classe é representada pelo seu <strong>ponto médio</strong> xᵢ, como na <a href="0003-media-de-dados-agrupados.html">Lição 3</a>.</li>
+  <li>Cada desvio ao quadrado é multiplicado por <strong>fᵢ</strong>, porque vale para fᵢ elementos.</li>
+  <li>O resultado é uma estimativa, pelo mesmo motivo da média agrupada.</li>
+</ul>
+<p>A fórmula de atalho é a mais prática à mão <a href="https://openstax.org/books/introductory-statistics-2e/pages/2-7-measures-of-the-spread-of-the-data">(OpenStax, §2.7)</a>:</p>
+<p class="formula">SQ = Σxᵢ²fᵢ − <span class="frac"><span>(Σxᵢfᵢ)²</span><span>n</span></span> &emsp; s² = <span class="frac"><span>SQ</span><span>n − 1</span></span> &emsp; σ² = <span class="frac"><span>SQ</span><span>n</span></span></p>
+<p>SQ é a soma dos quadrados dos desvios, Σfᵢ(xᵢ − x̄)², calculada sem precisar do x̄ em cada linha.</p>
+
+<h2>2. Exemplo resolvido: Questão 3 (tempo no ninho)</h2>
+<div class="table-wrap"><table>
+  <tr><th>Classe (dias)</th><th>xᵢ</th><th>fᵢ</th><th>xᵢfᵢ</th><th>xᵢ²fᵢ</th></tr>
+  <tr><td>5 ├ 10</td><td>7,5</td><td>14</td><td>105</td><td>787,5</td></tr>
+  <tr><td>10 ├ 15</td><td>12,5</td><td>16</td><td>200</td><td>2 500</td></tr>
+  <tr><td>15 ├ 20</td><td>17,5</td><td>18</td><td>315</td><td>5 512,5</td></tr>
+  <tr><td>20 ├ 25</td><td>22,5</td><td>15</td><td>337,5</td><td>7 593,75</td></tr>
+  <tr><td>25 ├ 30</td><td>27,5</td><td>7</td><td>192,5</td><td>5 293,75</td></tr>
+  <tr class="total"><td>Σ</td><td></td><td>70</td><td>1 150</td><td>21 687,5</td></tr>
+  <caption>xᵢ²fᵢ = (ponto médio)² × fᵢ. Ex.: 7,5² × 14 = 56,25 × 14 = 787,5.</caption>
+</table></div>
+<ol class="steps">
+  <li>Média: x̄ = 1 150 ÷ 70 ≈ <strong>16,43 dias</strong>.</li>
+  <li>SQ = 21 687,5 − 1 150²/70 = 21 687,5 − 18 892,86 = <strong>2 794,64</strong>.</li>
+  <li>Amostra ("amostra de aves"): s² = 2 794,64 ÷ 69 ≈ 40,50, então <strong>s ≈ 6,36 dias</strong>.</li>
+  <li>Se fosse população: σ² = 2 794,64 ÷ 70 ≈ 39,92, e σ ≈ 6,32 dias.</li>
+</ol>
+<div class="note"><p><strong>Cuidado com o arredondamento:</strong> no atalho, use (Σxᵢfᵢ)²/n com os valores exatos, e não n·x̄² com x̄ arredondado. Com x̄ = 16,4, por exemplo, SQ = 21 687,5 − 70 × 16,4² = 2 860,3, e o desvio-padrão sairia 6,44 em vez de 6,36. Guarde a fração (1 150²/70) até o fim.</p></div>
+
+<h2>Pratique</h2>
+<p>Monte a tabela no papel primeiro. Os dados estão no PDF da Lista 2.</p>
+
+<h3>Questão 2 (consumo de água, n = 75)</h3>
+<div class="num" data-answer="1985" data-tol="0.5" data-hint="Pontos médios 5, 15, 25, 35, 45, 55; multiplique por fᵢ e some." data-why="10 + 405 + 475 + 560 + 315 + 220 = 1 985.">
+  <p class="q">1) Σxᵢfᵢ =</p>
+  <div class="row"><input inputmode="decimal" aria-label="resposta"><button>Conferir</button></div>
+  <p class="fb"></p>
+</div>
+<div class="num" data-answer="63875" data-tol="0.5" data-hint="(5²·2) + (15²·27) + (25²·19) + (35²·16) + (45²·7) + (55²·4)." data-why="50 + 6 075 + 11 875 + 19 600 + 14 175 + 12 100 = 63 875.">
+  <p class="q">2) Σxᵢ²fᵢ =</p>
+  <div class="row"><input inputmode="decimal" aria-label="resposta"><button>Conferir</button></div>
+  <p class="fb"></p>
+</div>
+<div class="num" data-answer="153.23" data-tol="0.02" data-hint="SQ = 63 875 − 1 985²/75 ≈ 11 338,67. Divida por 74." data-why="s² ≈ 153,23 (m³)². (Populacional: σ² ≈ 151,18.)">
+  <p class="q">3) Variância amostral s² (duas casas):</p>
+  <div class="row"><input inputmode="decimal" aria-label="resposta"><button>Conferir</button></div>
+  <p class="fb"></p>
+</div>
+<div class="num" data-answer="12.38" data-tol="0.01" data-hint="Raiz quadrada da variância." data-why="s = √153,23 ≈ 12,38 m³. (Populacional: σ ≈ 12,30.)">
+  <p class="q">4) Desvio-padrão amostral s (duas casas):</p>
+  <div class="row"><input inputmode="decimal" aria-label="resposta"><button>Conferir</button></div>
+  <p class="fb"></p>
+</div>
+
+<h3>Questão 4(e) (refrigerante, n = 57)</h3>
+<div class="num" data-answer="0.613" data-tol="0.002" data-hint="Σxᵢfᵢ = 58,25 e Σxᵢ²fᵢ = 80,5625. SQ = 80,5625 − 58,25²/57." data-why="SQ ≈ 21,035; s² = 21,035 ÷ 56 ≈ 0,3756; s ≈ 0,613 L. (Populacional: σ ≈ 0,607.)">
+  <p class="q">5) Desvio-padrão amostral s (três casas):</p>
+  <div class="row"><input inputmode="decimal" aria-label="resposta"><button>Conferir</button></div>
+  <p class="fb"></p>
+</div>
+
+<div class="quiz" data-answer="a">
+  <p class="q">6) Na tabela, por que multiplicamos o quadrado do ponto médio por fᵢ?</p>
+  <div class="opts">
+    <button data-opt="a" data-why="Cada classe representa fᵢ elementos, todos supostos no ponto médio.">Porque o ponto médio representa fᵢ elementos</button>
+    <button data-opt="b" data-why="n − 1 aparece só no final, ao dividir SQ.">Porque a fórmula amostral exige fazer isso</button>
+    <button data-opt="c" data-why="A amplitude h não entra na conta da variância.">Porque todas as classes têm amplitude igual</button>
+  </div>
+  <p class="fb"></p>
+</div>
+
+<div class="source">
+  <p><strong>Fonte principal recomendada:</strong> <a href="https://openstax.org/books/introductory-statistics-2e/pages/2-7-measures-of-the-spread-of-the-data">OpenStax, §2.7</a>. Procure o exemplo de desvio-padrão de uma tabela de frequência com pontos médios.</p>
+</div>
+
+<div class="ask"><p>Seu resultado deu um pouco diferente? Mande a sua tabela para o seu agente: ele acha em que linha a conta desviou.</p></div>
+
+<p>Resumo: <a href="../reference/formulario.html#dispersao">Formulário › Dispersão</a>.</p>
+
+<nav class="lesson-nav">
+  <a href="0005-variancia-e-desvio-padrao.html">← Lição 5</a>
+  <a href="0007-coeficiente-de-variacao.html">Lição 7: coeficiente de variação →</a>
+</nav>
+</main>
+<script src="../assets/quiz.js"></script>
+</body>
+</html>

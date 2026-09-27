@@ -1,0 +1,99 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Formulário — Estatística Descritiva</title>
+<link rel="stylesheet" href="../assets/style.css">
+</head>
+<body>
+<main>
+<nav class="crumbs"><a href="../index.html">Início</a> › Formulário</nav>
+
+<p class="kicker">Referência rápida · cabe numa folha impressa</p>
+<h1>Formulário</h1>
+<p class="subtitle">Tudo o que as Listas 1, 2 e 3 usam, em uma página.</p>
+
+<h2 id="frequencias">Frequências</h2>
+<div class="table-wrap"><table>
+  <tr><th>Símbolo</th><th style="text-align:left">Nome</th><th style="text-align:left">Cálculo</th></tr>
+  <tr><td>fᵢ</td><td style="text-align:left">frequência absoluta</td><td style="text-align:left">contagem do valor/classe</td></tr>
+  <tr><td>frᵢ</td><td style="text-align:left">frequência relativa</td><td style="text-align:left">fᵢ ÷ n</td></tr>
+  <tr><td>fr%</td><td style="text-align:left">frequência relativa percentual</td><td style="text-align:left">frᵢ × 100</td></tr>
+  <tr><td>Fᵢ</td><td style="text-align:left">frequência acumulada</td><td style="text-align:left">f₁ + f₂ + … + fᵢ</td></tr>
+  <tr><td>Frᵢ</td><td style="text-align:left">frequência relativa acumulada</td><td style="text-align:left">Fᵢ ÷ n</td></tr>
+  <tr><td>AT</td><td style="text-align:left">amplitude total</td><td style="text-align:left">x<sub>máx</sub> − x<sub>mín</sub></td></tr>
+  <tr><td>h</td><td style="text-align:left">amplitude de classe</td><td style="text-align:left">lim. sup. − lim. inf.</td></tr>
+</table></div>
+<p><strong>Conferências:</strong> Σfᵢ = n · Σfrᵢ = 1 · último Fᵢ = n. &emsp; <strong>a ├ b</strong> inclui a e exclui b.</p>
+
+<h2 id="nao-agrupados">Dados não agrupados</h2>
+<div class="table-wrap"><table>
+  <tr><th>Medida</th><th style="text-align:left">Como achar</th></tr>
+  <tr><td>Moda</td><td style="text-align:left">valor com maior fᵢ</td></tr>
+  <tr><td>Mediana, n ímpar</td><td style="text-align:left">elemento na posição (n + 1)/2</td></tr>
+  <tr><td>Mediana, n par</td><td style="text-align:left">média dos elementos nas posições n/2 e n/2 + 1</td></tr>
+  <tr><td>Média</td><td style="text-align:left">x̄ = Σ xᵢ·fᵢ ÷ n</td></tr>
+</table></div>
+<p>Para achar "quem está na posição k": o primeiro valor cujo Fᵢ ≥ k.</p>
+
+<h2 id="agrupados">Dados agrupados em classes</h2>
+<p class="formula">Ponto médio: xᵢ = <span class="frac"><span>lim. inf. + lim. sup.</span><span>2</span></span> &emsp; Média: x̄ ≈ <span class="frac"><span>Σ xᵢ·fᵢ</span><span>n</span></span></p>
+<p class="formula">Mediana: Md = lᵢ + <span class="frac"><span>n/2 − F<sub>ant</sub></span><span>f<sub>md</sub></span></span> · h</p>
+<p class="formula">Moda de Czuber: Mo = lᵢ + <span class="frac"><span>d₁</span><span>d₁ + d₂</span></span> · h &emsp; d₁ = f<sub>mod</sub> − f<sub>ant</sub>, d₂ = f<sub>mod</sub> − f<sub>post</sub></p>
+<p><strong>Moda bruta:</strong> ponto médio da classe de maior fᵢ. &emsp; <strong>AT:</strong> lim. sup. da última − lim. inf. da primeira.</p>
+<div class="note">
+  <p><strong>Cuidados:</strong></p>
+  <p>• F<sub>ant</sub> é o acumulado da classe <em>anterior</em>, não da classe mediana.</p>
+  <p>• A média por ponto médio é estimativa. Se a tabela der o total real (Questão 2), use-o.</p>
+  <p>• A média é sensível a extremos; a mediana, não (Questão 4).</p>
+</div>
+
+<h2 id="dispersao">Dispersão (Lista 2)</h2>
+<div class="table-wrap"><table>
+  <tr><th>Medida</th><th style="text-align:left">Amostra (n − 1)</th><th style="text-align:left">População (n)</th></tr>
+  <tr><td>Variância, dados soltos</td><td style="text-align:left">s² = Σ(xᵢ − x̄)² ÷ (n − 1)</td><td style="text-align:left">σ² = Σ(xᵢ − x̄)² ÷ n</td></tr>
+  <tr><td>Variância, tabela</td><td style="text-align:left">s² = Σfᵢ(xᵢ − x̄)² ÷ (n − 1)</td><td style="text-align:left">σ² = Σfᵢ(xᵢ − x̄)² ÷ n</td></tr>
+  <tr><td>Desvio-padrão</td><td style="text-align:left">s = √s²</td><td style="text-align:left">σ = √σ²</td></tr>
+</table></div>
+<p class="formula">Atalho: SQ = Σxᵢ²fᵢ − <span class="frac"><span>(Σxᵢfᵢ)²</span><span>n</span></span> &emsp; (dados soltos: fᵢ = 1)</p>
+<p class="formula">Coeficiente de variação: CV = <span class="frac"><span>s</span><span>x̄</span></span> × 100%</p>
+<p><strong>Constante:</strong> se y = a·x, então ȳ = a·x̄, s<sub>y</sub> = |a|·s<sub>x</sub> e o CV não muda.</p>
+<div class="note">
+  <p><strong>Cuidados:</strong></p>
+  <p>• Mediana com n par: média dos elementos nas posições n/2 e n/2 + 1.</p>
+  <p>• Σ(xᵢ − x̄) = 0 sempre; use como conferência.</p>
+  <p>• Não arredonde x̄ antes de elevar ao quadrado.</p>
+  <p>• "Amostra" no enunciado → n − 1. Na dúvida, confirme com o professor.</p>
+</div>
+
+<h2 id="classes">Montar classes (Lista 3)</h2>
+<ol class="steps">
+  <li>AT = máx − mín.</li>
+  <li>k ≈ 1 + 3,322 · log n (Sturges) ou k ≈ √n.</li>
+  <li>h ≈ AT ÷ k, arredondado para cima até um valor redondo.</li>
+  <li>Início no mínimo ou num número redondo abaixo dele; o máximo precisa caber na última classe (a ├ b exclui b).</li>
+  <li>Contar; Σfᵢ = n. Histograma: barras encostadas, base = classe, altura = fᵢ.</li>
+</ol>
+
+<h2 id="assimetria">Média geométrica, homogeneidade e assimetria (Lista 3)</h2>
+<p class="formula">G = <sup>n</sup>√(x₁·…·xₙ) &emsp; log G = <span class="frac"><span>Σ fᵢ log xᵢ</span><span>n</span></span> &emsp; (G ≤ x̄)</p>
+<p class="formula">As = <span class="frac"><span>3(x̄ − Md)</span><span>s</span></span> &emsp; ou &emsp; As = <span class="frac"><span>x̄ − Mo</span><span>s</span></span></p>
+<div class="table-wrap"><table>
+  <tr><th>CV</th><th style="text-align:left">Leitura</th><th>|As|</th><th style="text-align:left">Leitura</th></tr>
+  <tr><td>≤ 15%</td><td style="text-align:left">baixa dispersão, homogênea</td><td>&lt; 0,15</td><td style="text-align:left">simétrica</td></tr>
+  <tr><td>15–30%</td><td style="text-align:left">dispersão média</td><td>0,15–1</td><td style="text-align:left">assimetria moderada</td></tr>
+  <tr><td>&gt; 30%</td><td style="text-align:left">alta dispersão, heterogênea</td><td>&gt; 1</td><td style="text-align:left">assimetria forte</td></tr>
+</table></div>
+<p>As &gt; 0: cauda à direita (x̄ &gt; Md &gt; Mo). As &lt; 0: cauda à esquerda (x̄ &lt; Md &lt; Mo). Faixas são convenção; escreva o critério adotado.</p>
+
+<h2>Fontes</h2>
+<p><a href="https://openstax.org/books/introductory-statistics-2e/pages/1-3-frequency-frequency-tables-and-levels-of-measurement">OpenStax §1.3</a> · <a href="https://openstax.org/books/introductory-statistics-2e/pages/2-5-measures-of-the-center-of-the-data">OpenStax §2.5</a> · <a href="https://rpm.org.br/cdrpm/85/17.html">RPM 85 (SBM)</a> · <a href="https://openstax.org/books/introductory-statistics-2e/pages/2-7-measures-of-the-spread-of-the-data">OpenStax §2.7</a> · <a href="https://www.itl.nist.gov/div898/handbook/eda/section3/eda356.htm">NIST Handbook</a> · <a href="https://openstax.org/books/introductory-business-statistics-2e/pages/2-5-geometric-mean">OpenStax Business §2.5</a> · <a href="http://soniavieira.blogspot.com/2018/05/por-conta-de-umapergunta-sobre-questao_83.html">Sonia Vieira (assimetria)</a></p>
+
+<nav class="lesson-nav">
+  <a href="../index.html">← Índice</a>
+  <a href="gabarito-lista-1.html">Gabarito comentado →</a>
+</nav>
+</main>
+</body>
+</html>

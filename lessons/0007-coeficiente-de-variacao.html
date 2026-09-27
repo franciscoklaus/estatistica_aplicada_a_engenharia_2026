@@ -1,0 +1,99 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Lição 7 — Coeficiente de variação</title>
+<link rel="stylesheet" href="../assets/style.css">
+</head>
+<body>
+<main>
+<nav class="crumbs"><a href="../index.html">Início</a> › Lista 2 › Lição 7</nav>
+
+<p class="kicker">Lição 7 · Lista 2 · Questões 3(e), 4(d), 5(c) e revisão</p>
+<h1>Coeficiente de variação</h1>
+<p class="subtitle">Um desvio-padrão de 10 é muito ou pouco? Depende do tamanho da média.</p>
+
+<div class="mission">
+  <p><strong>Por que isso importa para a sua missão:</strong> as Questões 3 e 5 pedem o coeficiente de variação, e a 4(d) testa uma propriedade da média que economiza contas. No fim, uma revisão intercalada cobre o resto da Lista 2.</p>
+</div>
+
+<p class="win"><strong>Sua vitória nesta lição:</strong> comparar a dispersão de dois conjuntos com unidades ou escalas diferentes.</p>
+
+<h2>1. A definição</h2>
+<p>O coeficiente de variação (CV) é o desvio-padrão dividido pela média <a href="https://www.itl.nist.gov/div898/software/dataplot/refman2/ch2/coef_var.pdf">(NIST)</a>, normalmente em porcentagem:</p>
+<p class="formula">CV = <span class="frac"><span>s</span><span>x̄</span></span> × 100%</p>
+<p>Como s e x̄ têm a mesma unidade, ela se cancela: o CV não tem unidade. Por isso ele compara coisas que o desvio-padrão sozinho não compara, como dias de ninho e bactérias por 100 mL.</p>
+
+<h2>2. Exemplos resolvidos</h2>
+<div class="table-wrap"><table>
+  <tr><th>Questão</th><th>x̄</th><th>s</th><th>CV</th></tr>
+  <tr><td>3(e): tempo no ninho</td><td>16,43 dias</td><td>6,36 dias</td><td>≈ 38,74%</td></tr>
+  <tr><td>5(c): bactérias</td><td>59,6</td><td>10,48</td><td>≈ 17,58%</td></tr>
+  <caption>Com o desvio populacional σ: 38,46% e 16,68%.</caption>
+</table></div>
+<p><strong>Leitura:</strong> o desvio-padrão das bactérias (10,48) é maior em número que o do ninho (6,36), mas, <em>em relação à média</em>, o tempo no ninho varia mais que o dobro (38,7% contra 17,6%).</p>
+<div class="note"><p>Alguns livros classificam o CV em faixas ("baixa", "média", "alta" dispersão), mas os limites variam de autor para autor. Se o professor usar uma tabela de classificação, anote-a no formulário.</p></div>
+
+<h2>3. Multiplicar os dados por uma constante: Questão 4(d)</h2>
+<p>"Se a empresa tem lucro de R$ 0,50 por litro, qual o lucro médio por pessoa?" Não é preciso refazer a tabela: se cada valor é multiplicado por 0,50, a média também é.</p>
+<p class="formula">lucro médio = 0,50 × x̄ = 0,50 × 1,022 ≈ <strong>R$ 0,51</strong> por pessoa, por semana</p>
+<p>O desvio-padrão também é multiplicado pela constante (0,50 × 0,613 ≈ R$ 0,31), e o CV não muda: a constante aparece em cima e embaixo da fração e se cancela.</p>
+
+<h2>Pratique (revisão intercalada da Lista 2)</h2>
+<p>As questões misturam lições diferentes, de propósito. Antes de calcular, pergunte-se: <em>que medida é essa, e os dados estão soltos ou em classes?</em></p>
+
+<div class="num" data-answer="17.58" data-tol="0.05" data-hint="CV = s ÷ x̄ × 100, com s ≈ 10,48 e x̄ = 59,6." data-why="10,48 ÷ 59,6 × 100 ≈ 17,58%.">
+  <p class="q">1) Questão 5(c): CV das bactérias, em %:</p>
+  <div class="row"><input inputmode="decimal" aria-label="resposta"><button>Conferir</button></div>
+  <p class="fb"></p>
+</div>
+
+<div class="num" data-answer="16.39" data-tol="0.01" data-hint="n/2 = 35; Fᵢ = 14, 30, 48… A classe mediana é 15 ├ 20, com Fant = 30 e fmd = 18." data-why="Md = 15 + (35 − 30)/18 · 5 ≈ 16,39 dias.">
+  <p class="q">2) Questão 3(b): mediana do tempo no ninho (Lição 4):</p>
+  <div class="row"><input inputmode="decimal" aria-label="resposta"><button>Conferir</button></div>
+  <p class="fb"></p>
+</div>
+
+<div class="num" data-answer="61.40" data-tol="0.02" data-hint="Menos de 1 litro = classes 0,0 ├ 0,5 e 0,5 ├ 1,0. Divida pelo total de 57 pessoas." data-why="(10 + 25) ÷ 57 ≈ 61,40%.">
+  <p class="q">3) Questão 4(b): % de pessoas que consomem menos de 1 litro por semana:</p>
+  <div class="row"><input inputmode="decimal" aria-label="resposta"><button>Conferir</button></div>
+  <p class="fb"></p>
+</div>
+
+<div class="quiz" data-answer="b">
+  <p class="q">4) Questão 4(c): que intervalos contêm o consumo modal e o consumo mediano?</p>
+  <div class="opts">
+    <button data-opt="a" data-why="A moda está certa, mas a posição da mediana é 28,5, e o Fᵢ de 0,5 ├ 1,0 é 35.">modal 0,5 ├ 1,0 · mediano 1,0 ├ 1,5</button>
+    <button data-opt="b" data-why="Maior fᵢ (25) e a 28,5ª posição caem ambos em 0,5 ├ 1,0.">modal 0,5 ├ 1,0 · mediano 0,5 ├ 1,0</button>
+    <button data-opt="c" data-why="A classe 0,0 ├ 0,5 tem só 10 pessoas; não é a de maior fᵢ.">modal 0,0 ├ 0,5 · mediano 0,5 ├ 1,0</button>
+  </div>
+  <p class="fb"></p>
+</div>
+
+<div class="quiz" data-answer="c">
+  <p class="q">5) Se o lucro por litro subisse para R$ 1,00, o CV do lucro por pessoa…</p>
+  <div class="opts">
+    <button data-opt="a" data-why="s e x̄ dobram juntos; a razão entre eles fica igual.">dobraria, porque o desvio-padrão também dobraria junto</button>
+    <button data-opt="b" data-why="Nenhuma das duas partes da fração diminui.">cairia pela metade, porque a média dobra</button>
+    <button data-opt="c" data-why="A constante multiplica s e x̄ e se cancela na divisão.">continuaria igual, porque a constante se cancela</button>
+  </div>
+  <p class="fb"></p>
+</div>
+
+<div class="source">
+  <p><strong>Fonte principal recomendada:</strong> <a href="https://openstax.org/books/introductory-statistics-2e/pages/2-7-measures-of-the-spread-of-the-data">OpenStax, §2.7</a> para o desvio-padrão e a <a href="https://www.itl.nist.gov/div898/software/dataplot/refman2/ch2/coef_var.pdf">definição de CV do NIST</a>.</p>
+</div>
+
+<div class="ask"><p>Quer saber onde o CV aparece em engenharia de software (tempo de resposta, estabilidade de testes de desempenho)? Pergunte ao seu agente.</p></div>
+
+<p>Resumo: <a href="../reference/formulario.html#dispersao">Formulário › Dispersão</a> · <a href="../reference/gabarito-lista-2.html">Gabarito da Lista 2</a>.</p>
+
+<nav class="lesson-nav">
+  <a href="0006-dispersao-em-classes.html">← Lição 6</a>
+  <a href="0008-montando-classes-e-histograma.html">Lição 8 (Lista 3): montando classes →</a>
+</nav>
+</main>
+<script src="../assets/quiz.js"></script>
+</body>
+</html>

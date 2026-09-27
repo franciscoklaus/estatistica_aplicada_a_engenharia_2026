@@ -1,0 +1,139 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Lição 4 — Mediana e moda em classes</title>
+<link rel="stylesheet" href="../assets/style.css">
+</head>
+<body>
+<main>
+<nav class="crumbs"><a href="../index.html">Lista 1</a> › Lição 4</nav>
+
+<p class="kicker">Lição 4 · Questão 5 e Questão 6 (b–f)</p>
+<h1>Mediana e moda em classes</h1>
+<p class="subtitle">Achar o "meio" e o "pico" de uma distribuição quando os dados estão agrupados.</p>
+
+<div class="mission">
+  <p><strong>Por que isso importa para a sua missão:</strong> a Questão 5 é inteira sobre a mediana por interpolação, e a Questão 6 pede moda, porcentagens e amplitude de uma tabela em classes. É o conteúdo mais "de fórmula" da lista.</p>
+</div>
+
+<p class="win"><strong>Sua vitória nesta lição:</strong> aplicar a fórmula da mediana entendendo cada termo, sem decorar letra por letra.</p>
+
+<h2>1. Mediana por interpolação</h2>
+<p>Fórmula na notação brasileira, como na <a href="https://rpm.org.br/cdrpm/85/17.html">Revista do Professor de Matemática (SBM), nº 85</a>:</p>
+<p class="formula">Md = lᵢ + <span class="frac"><span>(n/2 − F<sub>ant</sub>)</span><span>f<sub>md</sub></span></span> · h</p>
+<ul>
+  <li><strong>n/2</strong>: a posição da mediana.</li>
+  <li><strong>Classe mediana</strong>: a primeira classe cujo Fᵢ alcança n/2.</li>
+  <li><strong>lᵢ</strong>: limite inferior da classe mediana.</li>
+  <li><strong>F<sub>ant</sub></strong>: frequência acumulada <em>da classe anterior</em>.</li>
+  <li><strong>f<sub>md</sub></strong>: frequência da classe mediana.</li>
+  <li><strong>h</strong>: amplitude da classe (limite superior − limite inferior).</li>
+</ul>
+
+<h3>A intuição, sem fórmula</h3>
+<p>A fórmula supõe que os valores estão <em>espalhados por igual</em> dentro da classe. Então ela pergunta: "quantos elementos ainda faltam para chegar ao meio?" (n/2 − F<sub>ant</sub>) e "que fração da classe isso representa?" (÷ f<sub>md</sub>). Essa fração da largura h é somada ao início da classe.</p>
+
+<h2>2. Exemplo resolvido: Questão 5</h2>
+<div class="table-wrap"><table>
+  <tr><th>Classe (cm)</th><th>fᵢ</th><th>Fᵢ</th></tr>
+  <tr><td>151 ├ 156</td><td>4</td><td>4</td></tr>
+  <tr><td>156 ├ 161</td><td>4</td><td>8</td></tr>
+  <tr><td>161 ├ 166</td><td>11</td><td>19</td></tr>
+  <tr class="hl"><td>166 ├ 171</td><td>33</td><td>52</td></tr>
+  <tr><td>171 ├ 176</td><td>17</td><td>69</td></tr>
+  <tr><td>176 ├ 181</td><td>17</td><td>86</td></tr>
+  <tr><td>181 ├ 186</td><td>9</td><td>95</td></tr>
+  <tr><td>186 ├ 191</td><td>5</td><td>100</td></tr>
+  <tr class="total"><td>Σ</td><td>100</td><td>—</td></tr>
+</table></div>
+<ol class="steps">
+  <li>Posição: n/2 = 100/2 = <strong>50</strong>.</li>
+  <li>Classe mediana: o Fᵢ passa de 19 para 52 na classe <strong>166 ├ 171</strong>, que contém a 50ª posição.</li>
+  <li>Termos: lᵢ = 166, F<sub>ant</sub> = 19, f<sub>md</sub> = 33, h = 5.</li>
+  <li>Faltam 50 − 19 = 31 elementos dentro de uma classe com 33, ou seja, 31/33 ≈ 0,94 da largura.</li>
+  <li>Md = 166 + (31/33)·5 = 166 + 4,70 ≈ <strong>170,70 cm</strong>.</li>
+</ol>
+
+<h2>3. Moda em classes: bruta e de Czuber</h2>
+<p>A <strong>classe modal</strong> é a de maior fᵢ. Há dois jeitos de tirar um número dela:</p>
+<ul>
+  <li><strong>Moda bruta:</strong> o ponto médio da classe modal. É rápida, mas ignora as classes vizinhas.</li>
+  <li><strong>Moda de Czuber:</strong> desloca a moda em direção à vizinha mais "pesada" <a href="https://rpm.org.br/cdrpm/85/17.html">(RPM 85)</a>:</li>
+</ul>
+<p class="formula">Mo = lᵢ + <span class="frac"><span>d₁</span><span>d₁ + d₂</span></span> · h &emsp; d₁ = f<sub>mod</sub> − f<sub>ant</sub> &emsp; d₂ = f<sub>mod</sub> − f<sub>post</sub></p>
+
+<h3>Questão 6(e)</h3>
+<ol class="steps">
+  <li>A classe modal é <strong>250 ├ 300</strong> (fᵢ = 80).</li>
+  <li>Moda bruta = (250 + 300)/2 = <strong>275 kWh</strong>.</li>
+  <li>Czuber: d₁ = 80 − 50 = 30 e d₂ = 80 − 24 = 56.</li>
+  <li>Mo = 250 + 30/86 · 50 ≈ 250 + 17,44 = <strong>267,44 kWh</strong>.</li>
+</ol>
+<div class="note"><p>A moda de Czuber ficou <em>abaixo</em> de 275 porque a classe anterior (50) é mais cheia que a posterior (24). O "pico" é puxado para o lado mais pesado. Se o professor não especificar, apresente as duas.</p></div>
+
+<h2>4. Porcentagens e amplitude: Questão 6 (b, c, d, f)</h2>
+<p>Aqui não precisa de fórmula nova: é só somar as fᵢ das classes pedidas e dividir por n = 250.</p>
+<div class="table-wrap"><table>
+  <tr><th>Item</th><th style="text-align:left">Classes somadas</th><th>fᵢ</th><th>%</th></tr>
+  <tr><td>b) 200 ≤ x &lt; 250</td><td style="text-align:left">200 ├ 250</td><td>50</td><td>20%</td></tr>
+  <tr><td>c) x &lt; 200</td><td style="text-align:left">as quatro primeiras</td><td>96</td><td>38,4%</td></tr>
+  <tr><td>d) x ≥ 250</td><td style="text-align:left">250 ├ 300 e 300 ├ 350</td><td>104</td><td>41,6%</td></tr>
+</table></div>
+<p>Conferência: 38,4% + 20% + 41,6% = 100%, porque as três faixas cobrem todos os dados sem sobreposição.</p>
+<p><strong>f) Amplitude total</strong> em classes: limite superior da última menos limite inferior da primeira, 350 − 0 = <strong>350 kWh</strong>.</p>
+
+<h2>Pratique (intercalado)</h2>
+<p>As perguntas misturam esta lição com as anteriores de propósito. Alternar tipos de problema obriga você a <em>escolher</em> o método, que é o que a prova cobra.</p>
+
+<div class="num" data-answer="19" data-tol="0" data-hint="É o Fᵢ da classe ANTES da classe mediana, não o da própria classe." data-why="O Fᵢ da classe 161 ├ 166 é 19.">
+  <p class="q">1) Na Questão 5, qual é o valor de F<sub>ant</sub>?</p>
+  <div class="row"><input inputmode="decimal" aria-label="resposta"><button>Conferir</button></div>
+  <p class="fb"></p>
+</div>
+
+<div class="quiz" data-answer="c">
+  <p class="q">2) Na Questão 5, suponha que 7 pessoas da classe 171 ├ 176 fossem, na verdade, da classe 166 ├ 171 (que passaria a ter fᵢ = 40; n continua 100). A mediana…</p>
+  <div class="opts">
+    <button data-opt="a" data-why="Com f_md maior, a fração (50 − 19)/f_md diminui.">ficaria maior, porque a classe mediana cresceu</button>
+    <button data-opt="b" data-why="f_md está no denominador da fórmula, então muda o resultado.">continuaria igual, porque lᵢ não se alterou</button>
+    <button data-opt="c" data-why="F_ant continua 19, mas agora 31 elementos são 31/40 da classe: Md = 166 + (31/40)·5 ≈ 169,88 cm.">ficaria menor, porque a fração calculada diminuiu</button>
+  </div>
+  <p class="fb"></p>
+</div>
+
+<div class="num" data-answer="38.4" data-tol="0.01" data-hint="Some 2 + 15 + 32 + 47 e divida por 250." data-why="96 ÷ 250 = 0,384.">
+  <p class="q">3) Questão 6(c): que porcentagem das famílias consome menos de 200 kWh?</p>
+  <div class="row"><input inputmode="decimal" aria-label="resposta"><button>Conferir</button></div>
+  <p class="fb"></p>
+</div>
+
+<div class="num" data-answer="15" data-tol="0" data-hint="Dados não agrupados: é o valor com o maior fᵢ." data-why="O 15 aparece 6 vezes. Aqui não tem classe, então não tem Czuber.">
+  <p class="q">4) Revisão (Lição 2): qual é a moda das idades da Questão 1?</p>
+  <div class="row"><input inputmode="decimal" aria-label="resposta"><button>Conferir</button></div>
+  <p class="fb"></p>
+</div>
+
+<div class="num" data-answer="24.44" data-tol="0.02" data-hint="Classe modal 20 ├ 30 (f = 9); d₁ = 9 − 5 e d₂ = 9 − 4; h = 10." data-why="Mo = 20 + 4/(4 + 5)·10 = 20 + 4,44 ≈ 24,44.">
+  <p class="q">5) Problema novo: classes 10 ├ 20, 20 ├ 30 e 30 ├ 40 com fᵢ = 5, 9 e 4. Qual é a moda de Czuber?</p>
+  <div class="row"><input inputmode="decimal" aria-label="resposta"><button>Conferir</button></div>
+  <p class="fb"></p>
+</div>
+
+<div class="source">
+  <p><strong>Fonte principal recomendada:</strong> <a href="https://rpm.org.br/cdrpm/85/17.html">Márcio A. Monteiro, "Medidas Estatísticas de Posição com dados Agrupados", <em>RPM</em> 85 (SBM)</a>. Usa a mesma notação da lista e explica de onde vêm as fórmulas.</p>
+</div>
+
+<div class="ask"><p>Quer ver a mediana por interpolação desenhada como uma ogiva (gráfico de Fᵢ)? Peça ao seu agente.</p></div>
+
+<p>Resumo: <a href="../reference/formulario.html#agrupados">Formulário › Dados agrupados</a> · Gabarito completo: <a href="../reference/gabarito-lista-1.html">Gabarito comentado</a>.</p>
+
+<nav class="lesson-nav">
+  <a href="0003-media-de-dados-agrupados.html">← Lição 3</a>
+  <a href="0005-variancia-e-desvio-padrao.html">Lição 5 (Lista 2): variância e desvio-padrão →</a>
+</nav>
+</main>
+<script src="../assets/quiz.js"></script>
+</body>
+</html>

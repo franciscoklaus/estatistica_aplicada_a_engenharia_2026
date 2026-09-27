@@ -1,0 +1,122 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Lição 2 — Média, mediana e moda</title>
+<link rel="stylesheet" href="../assets/style.css">
+</head>
+<body>
+<main>
+<nav class="crumbs"><a href="../index.html">Lista 1</a> › Lição 2</nav>
+
+<p class="kicker">Lição 2 · Questão 1 (d, e, f) e Questão 4</p>
+<h1>Média, mediana e moda</h1>
+<p class="subtitle">Três jeitos de dizer qual é o valor "típico", e quando cada um engana.</p>
+
+<div class="mission">
+  <p><strong>Por que isso importa para a sua missão:</strong> as questões 1 e 4 cobram as três medidas em dados <em>não agrupados</em>. A Questão 4 ainda testa se você percebe por que média e mediana dão resultados diferentes.</p>
+</div>
+
+<p class="win"><strong>Sua vitória nesta lição:</strong> calcular as três medidas direto da tabela de frequências, sem reescrever os dados um por um.</p>
+
+<h2>1. As três definições</h2>
+<p>Definições do <a href="https://openstax.org/books/introductory-statistics-2e/pages/2-5-measures-of-the-center-of-the-data">OpenStax (§2.5)</a> e da <a href="https://pt.khanacademy.org/math/em-mat-estatistica/x5d13d3b4b5b8c419:medidas-de-tendencia-central/x5d13d3b4b5b8c419:media-mediana-e-moda/a/mean-median-and-mode-review">Khan Academy</a>:</p>
+<ul>
+  <li><strong>Moda (Mo):</strong> o valor com maior fᵢ.</li>
+  <li><strong>Mediana (Md):</strong> o valor do meio do rol. Metade dos dados fica abaixo, metade acima.</li>
+  <li><strong>Média (x̄):</strong> a soma de todos os valores dividida por n. Com tabela, cada valor "pesa" a sua frequência:</li>
+</ul>
+<p class="formula">x̄ = <span class="frac"><span>Σ xᵢ·fᵢ</span><span>n</span></span></p>
+
+<h3>Achando a posição da mediana</h3>
+<ul>
+  <li><strong>n ímpar:</strong> a mediana é o elemento da posição <span class="frac"><span>n + 1</span><span>2</span></span>.</li>
+  <li><strong>n par:</strong> a mediana é a média dos elementos das posições <span class="frac"><span>n</span><span>2</span></span> e <span class="frac"><span>n</span><span>2</span></span> + 1.</li>
+</ul>
+<p>Para achar quem está naquela posição, use a coluna <strong>Fᵢ</strong> (frequência acumulada): é o primeiro valor cujo Fᵢ alcança a posição.</p>
+
+<h2>2. Exemplo resolvido: Questão 1</h2>
+<div class="table-wrap"><table>
+  <tr><th>xᵢ</th><th>fᵢ</th><th>Fᵢ</th><th>xᵢ·fᵢ</th></tr>
+  <tr><td>4</td><td>2</td><td>2</td><td>8</td></tr>
+  <tr><td>6</td><td>2</td><td>4</td><td>12</td></tr>
+  <tr><td>8</td><td>3</td><td>7</td><td>24</td></tr>
+  <tr><td>12</td><td>2</td><td>9</td><td>24</td></tr>
+  <tr><td>14</td><td>3</td><td>12</td><td>42</td></tr>
+  <tr class="hl"><td>15</td><td>6</td><td>18</td><td>90</td></tr>
+  <tr><td>16</td><td>5</td><td>23</td><td>80</td></tr>
+  <tr><td>18</td><td>2</td><td>25</td><td>36</td></tr>
+  <tr class="total"><td>Σ</td><td>25</td><td>—</td><td>316</td></tr>
+</table></div>
+<ol class="steps">
+  <li><strong>Moda:</strong> o maior fᵢ é 6, do valor 15. <strong>Mo = 15 anos.</strong></li>
+  <li><strong>Mediana:</strong> n = 25 é ímpar, então a posição é (25 + 1)/2 = 13ª. Na coluna Fᵢ, o valor 14 chega até a 12ª posição e o 15 vai da 13ª à 18ª. <strong>Md = 15 anos.</strong></li>
+  <li><strong>Média:</strong> x̄ = 316 ÷ 25 = <strong>12,64 anos.</strong></li>
+</ol>
+<div class="note"><p>Aqui a média (12,64) ficou <em>abaixo</em> da mediana (15). Os poucos participantes bem jovens (4, 6 e 8 anos) puxam a média para baixo, mas não mexem na mediana.</p></div>
+
+<h2>3. Exemplo resolvido: Questão 4</h2>
+<div class="table-wrap"><table>
+  <tr><th>Salário (R$)</th><th>fᵢ</th><th>Fᵢ</th><th>xᵢ·fᵢ</th></tr>
+  <tr><td>500</td><td>10</td><td>10</td><td>5 000</td></tr>
+  <tr><td>1 000</td><td>5</td><td>15</td><td>5 000</td></tr>
+  <tr class="hl"><td>1 500</td><td>1</td><td>16</td><td>1 500</td></tr>
+  <tr><td>2 000</td><td>10</td><td>26</td><td>20 000</td></tr>
+  <tr><td>5 000</td><td>4</td><td>30</td><td>20 000</td></tr>
+  <tr><td>10 500</td><td>1</td><td>31</td><td>10 500</td></tr>
+  <tr class="total"><td>Σ</td><td>31</td><td>—</td><td>62 000</td></tr>
+</table></div>
+<ol class="steps">
+  <li><strong>Média:</strong> x̄ = 62 000 ÷ 31 = <strong>R$ 2 000,00.</strong></li>
+  <li><strong>Mediana:</strong> n = 31 é ímpar, então a posição é (31 + 1)/2 = 16ª. O Fᵢ de 1 000 é 15 e o de 1 500 é 16. <strong>Md = R$ 1 500,00.</strong></li>
+</ol>
+<div class="note"><p><strong>A lição por trás da Questão 4:</strong> a média é sensível a valores extremos. Um único salário de R$ 10 500 e quatro de R$ 5 000 puxam a média para R$ 2 000, embora metade dos funcionários ganhe R$ 1 500 ou menos. Para salários, a mediana costuma descrever melhor o "funcionário típico".</p></div>
+
+<h2>Pratique</h2>
+<p>Primeiro tente sem voltar à tabela. Só consulte se travar.</p>
+
+<div class="num" data-answer="16" data-tol="0" data-hint="(31 + 1) ÷ 2." data-why="n ímpar: posição (n + 1)/2 = 16.">
+  <p class="q">1) Na Questão 4 (n = 31), qual é a posição da mediana no rol?</p>
+  <div class="row"><input inputmode="decimal" aria-label="resposta"><button>Conferir</button></div>
+  <p class="fb"></p>
+</div>
+
+<div class="num" data-answer="2000" data-tol="0.5" data-hint="Some xᵢ·fᵢ de todas as linhas (dá 62 000) e divida por 31." data-why="62 000 ÷ 31 = 2 000.">
+  <p class="q">2) Qual é a média salarial da Questão 4, em reais?</p>
+  <div class="row"><input inputmode="decimal" aria-label="resposta"><button>Conferir</button></div>
+  <p class="fb"></p>
+</div>
+
+<div class="quiz" data-answer="a">
+  <p class="q">3) A empresa da Questão 4 contrata um diretor com salário de R$ 50 000. O que acontece?</p>
+  <div class="opts">
+    <button data-opt="a" data-why="A média vai de R$ 2 000 para R$ 3 500 (112 000 ÷ 32); a mediana só passa de R$ 1 500 para R$ 1 750.">A média sobe muito e a mediana quase não muda</button>
+    <button data-opt="b" data-why="A mediana depende da posição, não do tamanho do valor extremo.">A mediana sobe muito e a média quase não muda</button>
+    <button data-opt="c" data-why="A média é afetada por todo valor, inclusive os extremos.">As duas medidas continuam com exatamente os mesmos valores numéricos</button>
+  </div>
+  <p class="fb"></p>
+</div>
+
+<div class="num" data-answer="5" data-tol="0" data-hint="Posição (n + 1)/2 com n = 9 dá a 5ª; ordene os valores primeiro." data-why="Rol: 1, 2, 3, 4, 5, 6, 7, 8, 100. O 5º é 5, e o 100 não interfere.">
+  <p class="q">4) Mediana de: 7, 100, 3, 1, 8, 2, 6, 4, 5</p>
+  <div class="row"><input inputmode="decimal" aria-label="resposta"><button>Conferir</button></div>
+  <p class="fb"></p>
+</div>
+
+<div class="source">
+  <p><strong>Fonte principal recomendada:</strong> <a href="https://openstax.org/books/introductory-statistics-2e/pages/2-5-measures-of-the-center-of-the-data">OpenStax, <em>Introductory Statistics 2e</em>, §2.5 — Measures of the Center of the Data</a>. Em português, com exercícios corrigidos na hora: <a href="https://pt.khanacademy.org/math/em-mat-estatistica/x5d13d3b4b5b8c419:medidas-de-tendencia-central/x5d13d3b4b5b8c419:media-mediana-e-moda/a/mean-median-and-mode-review">Khan Academy — Média, mediana e moda (revisão)</a>.</p>
+</div>
+
+<div class="ask"><p>Não ficou claro por que a média "é puxada" e a mediana não? Peça ao seu agente outro exemplo, com números seus.</p></div>
+
+<p>Resumo: <a href="../reference/formulario.html#nao-agrupados">Formulário › Dados não agrupados</a>.</p>
+
+<nav class="lesson-nav">
+  <a href="0001-rol-e-tabela-de-frequencias.html">← Lição 1</a>
+  <a href="0003-media-de-dados-agrupados.html">Lição 3: média de dados agrupados →</a>
+</nav>
+</main>
+<script src="../assets/quiz.js"></script>
+</body>
+</html>

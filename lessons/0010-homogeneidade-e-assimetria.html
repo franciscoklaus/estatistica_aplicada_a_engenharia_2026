@@ -1,0 +1,116 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Lição 10 — Homogeneidade e assimetria</title>
+<link rel="stylesheet" href="../assets/style.css">
+</head>
+<body>
+<main>
+<nav class="crumbs"><a href="../index.html">Início</a> › Lista 3 › Lição 10</nav>
+
+<p class="kicker">Lição 10 · Lista 3 · Questões 2, 3, 7, 9(d) e 10</p>
+<h1>Homogênea? Simétrica?</h1>
+<p class="subtitle">Transformar números em conclusões: o CV decide a homogeneidade, o coeficiente de Pearson decide a simetria.</p>
+
+<div class="mission">
+  <p><strong>Por que isso importa para a sua missão:</strong> quase toda questão da Lista 3 termina com uma pergunta de sim ou não ("é homogênea?", "é simétrica?", "quais exigências não estão satisfeitas?"). O cálculo sem a conclusão fica incompleto.</p>
+</div>
+
+<p class="win"><strong>Sua vitória nesta lição:</strong> calcular o coeficiente de assimetria de Pearson e classificar uma distribuição quanto à homogeneidade e à simetria.</p>
+
+<h2>1. Homogeneidade pelo CV</h2>
+<p>Você já calcula o CV (<a href="0007-coeficiente-de-variacao.html">Lição 7</a>). A convenção usada em muitos livros brasileiros (por exemplo, Crespo, <em>Estatística Fácil</em>) é:</p>
+<div class="table-wrap"><table>
+  <tr><th>CV</th><th style="text-align:left">Dispersão</th><th style="text-align:left">Distribuição</th></tr>
+  <tr><td>≤ 15%</td><td style="text-align:left">baixa</td><td style="text-align:left">homogênea</td></tr>
+  <tr><td>15% a 30%</td><td style="text-align:left">média</td><td style="text-align:left">—</td></tr>
+  <tr><td>&gt; 30%</td><td style="text-align:left">alta</td><td style="text-align:left">heterogênea</td></tr>
+</table></div>
+<div class="note"><p>Os limites são <strong>convenção</strong>, não teorema: a própria <a href="https://pt.wikipedia.org/wiki/Coeficiente_de_varia%C3%A7%C3%A3o">Wikipédia</a> lembra que cada área define as suas faixas. Escreva sempre o critério que você usou ("adotando CV ≤ 15% como homogênea…").</p></div>
+
+<h2>2. Assimetria: para onde vai a cauda</h2>
+<ul>
+  <li><strong>Simétrica:</strong> x̄ ≈ Md ≈ Mo.</li>
+  <li><strong>Assimetria positiva</strong> (cauda à direita): valores altos esticam a média para cima, então x̄ &gt; Md &gt; Mo.</li>
+  <li><strong>Assimetria negativa</strong> (cauda à esquerda): x̄ &lt; Md &lt; Mo.</li>
+</ul>
+<p>O coeficiente de Pearson mede essa distância em "unidades de desvio-padrão". Existem duas versões <a href="http://soniavieira.blogspot.com/2018/05/por-conta-de-umapergunta-sobre-questao_83.html">(Sonia Vieira)</a>:</p>
+<p class="formula">As = <span class="frac"><span>3 (x̄ − Md)</span><span>s</span></span> &emsp;&emsp; ou &emsp;&emsp; As = <span class="frac"><span>x̄ − Mo</span><span>s</span></span></p>
+<p>Classificação usual <a href="https://ocs.ige.unicamp.br/ojs/sbgfa/article/view/1785/1460">(ex.: SBGFA/Unicamp)</a>:</p>
+<div class="table-wrap"><table>
+  <tr><th>|As|</th><th style="text-align:left">Classificação</th></tr>
+  <tr><td>&lt; 0,15</td><td style="text-align:left">simétrica (assimetria desprezível)</td></tr>
+  <tr><td>0,15 a 1</td><td style="text-align:left">assimetria moderada</td></tr>
+  <tr><td>&gt; 1</td><td style="text-align:left">assimetria forte</td></tr>
+</table></div>
+<div class="note">
+  <p><strong>Qual versão usar?</strong> Nesta documentação a principal é a da <strong>mediana</strong>, 3(x̄ − Md)/s. A moda de dados agrupados é a medida mais instável (muda com a escolha das classes e entre bruta e Czuber), e a mediana, não. O gabarito mostra as duas. <em>Confirme com o professor qual ele usa</em>: na Questão 7 e na Questão 3 elas levam a conclusões diferentes.</p>
+</div>
+
+<h2>3. Exemplo resolvido: Questão 7 (especificação das peças)</h2>
+<p>Tabela 2, com pontos médios 82,5 … 117,5 e n = 100: Σxᵢfᵢ = 9 980 e Σxᵢ²fᵢ = 999 275.</p>
+<ol class="steps">
+  <li><strong>Média:</strong> x̄ = 9 980 ÷ 100 = <strong>99,8 mm</strong>. Está entre 98 e 102: <strong>exigência satisfeita</strong>.</li>
+  <li><strong>CV:</strong> SQ = 999 275 − 9 980²/100 = 3 271, então s² = 3 271 ÷ 99 ≈ 33,04 e s ≈ 5,75 mm. CV = 5,75 ÷ 99,8 ≈ <strong>5,76%</strong>, abaixo de 10%: <strong>satisfeita</strong>.</li>
+  <li><strong>Mediana:</strong> n/2 = 50, na classe 95 ├ 100 (Fant = 13, fmd = 42). Md = 95 + (50 − 13)/42 · 5 ≈ <strong>99,40 mm</strong>.</li>
+  <li><strong>Assimetria:</strong> As = 3(99,8 − 99,40)/5,75 ≈ <strong>0,21</strong>, entre 0,15 e 1: assimetria positiva moderada. A distribuição <strong>não é simétrica</strong>.</li>
+</ol>
+<p><strong>Resposta:</strong> a exigência <em>não satisfeita</em> é a de simetria.</p>
+<details>
+  <summary>E com a outra fórmula?</summary>
+  <p>Com a moda de Czuber (Mo ≈ 99,02): As = (99,8 − 99,02)/5,75 ≈ 0,135 &lt; 0,15, e a distribuição seria considerada simétrica, com todas as exigências satisfeitas. Com a moda bruta (97,5): As ≈ 0,40, moderada. Como a questão pergunta "quais exigências <em>não</em> estão satisfeitas", o enunciado espera que alguma falhe, o que combina com a versão da mediana. Mesmo assim, vale confirmar em sala.</p>
+</details>
+
+<h2>Pratique</h2>
+
+<div class="quiz" data-answer="b">
+  <p class="q">1) Questão 2: as cotações têm x̄ ≈ 3,06 e s ≈ 0,54 (CV ≈ 17,7%). A distribuição é homogênea?</p>
+  <div class="opts">
+    <button data-opt="a" data-why="Para ser homogênea pela convenção, o CV teria que ser ≤ 15%.">Sim, porque o CV ficou abaixo de 30%</button>
+    <button data-opt="b" data-why="17,7% cai na faixa de dispersão média (15% a 30%).">Não, porque o CV ficou acima de 15%</button>
+    <button data-opt="c" data-why="Homogeneidade se decide pelo CV, não pelo desvio-padrão sozinho.">Sim, porque o desvio-padrão ficou abaixo de 1</button>
+  </div>
+  <p class="fb"></p>
+</div>
+
+<div class="num" data-answer="-1.06" data-tol="0.02" data-hint="x̄ ≈ 6,3483, Md = (6,36 + 6,38)/2 = 6,37 e s ≈ 0,0612." data-why="As = 3(6,3483 − 6,37)/0,0612 ≈ −1,06: assimetria negativa forte. Sim, é assimétrica.">
+  <p class="q">2) Questão 10 (chapas): coeficiente de Pearson As = 3(x̄ − Md)/s (duas casas):</p>
+  <div class="row"><input inputmode="decimal" aria-label="resposta"><button>Conferir</button></div>
+  <p class="fb"></p>
+</div>
+
+<div class="num" data-answer="-0.11" data-tol="0.01" data-hint="Questão 9: x̄ = 30,89, Md ≈ 31,18 e s ≈ 8,22." data-why="As = 3(30,89 − 31,18)/8,22 ≈ −0,11: |As| &lt; 0,15, praticamente simétrica.">
+  <p class="q">3) Questão 9(d): coeficiente As = 3(x̄ − Md)/s (duas casas):</p>
+  <div class="row"><input inputmode="decimal" aria-label="resposta"><button>Conferir</button></div>
+  <p class="fb"></p>
+</div>
+
+<div class="quiz" data-answer="c">
+  <p class="q">4) Questão 3: x̄ = 4, Md = 4 e Mo = 3 (defeitos por mês). O que acontece com os dois coeficientes?</p>
+  <div class="opts">
+    <button data-opt="a" data-why="A versão da moda dá (4 − 3)/2,15 ≈ 0,46, que não é zero.">Os dois dão zero: a distribuição é simétrica</button>
+    <button data-opt="b" data-why="A versão da mediana dá 3(4 − 4)/s = 0.">Os dois indicam assimetria positiva de grau moderado</button>
+    <button data-opt="c" data-why="Discordam. O histograma tem cauda à direita (até 9), o que apoia a leitura positiva.">Mediana indica simetria, e moda indica assimetria positiva</button>
+  </div>
+  <p class="fb"></p>
+</div>
+
+<div class="source">
+  <p><strong>Fonte principal recomendada:</strong> <a href="http://soniavieira.blogspot.com/2018/05/por-conta-de-umapergunta-sobre-questao_83.html">Sonia Vieira, "O que é assimetria e como se mede?"</a>. Curto, em português, e explica justamente por que as fórmulas de Pearson podem falhar com dados discretos (caso da Questão 3).</p>
+</div>
+
+<div class="ask"><p>Ficou em dúvida sobre como escrever a conclusão ("é simétrica?")? Peça ao seu agente um modelo de resposta por extenso.</p></div>
+
+<p>Resumo: <a href="../reference/formulario.html#assimetria">Formulário › Lista 3</a> · <a href="../reference/gabarito-lista-3.html">Gabarito da Lista 3</a>.</p>
+
+<nav class="lesson-nav">
+  <a href="0009-media-geometrica.html">← Lição 9</a>
+  <a href="../reference/gabarito-lista-3.html">Gabarito da Lista 3 →</a>
+</nav>
+</main>
+<script src="../assets/quiz.js"></script>
+<script src="../assets/print-details.js"></script>
+</body>
+</html>

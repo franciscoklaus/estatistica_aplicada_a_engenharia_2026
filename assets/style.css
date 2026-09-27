@@ -1,0 +1,187 @@
+/* Folha de estilo compartilhada por todas as lições e referências.
+   Inspiração: Tufte — texto em serifa, margens largas, tabelas limpas. */
+
+:root {
+  --bg: #fffff8;
+  --fg: #1d1d1b;
+  --muted: #6b6b63;
+  --rule: #d9d6c8;
+  --accent: #8a3b12;
+  --ok: #2e6b30;
+  --ok-bg: #e7f2e4;
+  --bad: #9b1c1c;
+  --bad-bg: #f8e5e2;
+  --note-bg: #f3efe0;
+  --code-bg: #f1eee2;
+}
+@media (prefers-color-scheme: dark) {
+  :root {
+    --bg: #1b1a17;
+    --fg: #e9e6da;
+    --muted: #a19d8f;
+    --rule: #3d3a33;
+    --accent: #e39a6c;
+    --ok: #9fd59a;
+    --ok-bg: #22321f;
+    --bad: #f0a39a;
+    --bad-bg: #3a2220;
+    --note-bg: #26241f;
+    --code-bg: #2a2823;
+  }
+}
+
+* { box-sizing: border-box; }
+
+html { font-size: 18px; }
+body {
+  margin: 0;
+  background: var(--bg);
+  color: var(--fg);
+  font-family: "Iowan Old Style", "Palatino Linotype", Palatino, "Book Antiqua", Georgia, serif;
+  line-height: 1.55;
+}
+main {
+  max-width: 42rem;
+  margin: 0 auto;
+  padding: 2.5rem 1rem 4rem;
+}
+
+h1 { font-weight: 400; font-size: 2.1rem; line-height: 1.15; margin: 0 0 .3rem; }
+h2 { font-weight: 400; font-style: italic; font-size: 1.45rem; margin: 2.4rem 0 .6rem; }
+h3 { font-weight: 400; font-size: 1.15rem; margin: 1.6rem 0 .4rem; }
+.subtitle { color: var(--muted); font-style: italic; margin: 0 0 2rem; }
+
+a { color: var(--accent); }
+a:hover { text-decoration-thickness: 2px; }
+
+p, li { hyphens: auto; }
+
+.kicker {
+  font-variant: small-caps;
+  letter-spacing: .06em;
+  color: var(--muted);
+  font-size: .9rem;
+}
+
+/* Caixas */
+.mission, .note, .source, .ask {
+  border-left: 3px solid var(--accent);
+  background: var(--note-bg);
+  padding: .7rem 1rem;
+  margin: 1.4rem 0;
+  font-size: .95rem;
+}
+.note { border-left-color: var(--muted); }
+.source { border-left-color: var(--ok); }
+.ask { border-left-color: var(--rule); font-style: italic; }
+.mission p, .note p, .source p, .ask p { margin: .2rem 0; }
+
+.win {
+  font-size: 1.05rem;
+  border-top: 1px solid var(--rule);
+  border-bottom: 1px solid var(--rule);
+  padding: .6rem 0;
+  margin: 1.2rem 0;
+}
+
+/* Fórmulas */
+.formula {
+  font-family: "STIX Two Math", "Cambria Math", "Latin Modern Math", serif;
+  font-size: 1.15rem;
+  text-align: center;
+  margin: 1rem 0;
+  padding: .6rem;
+  background: var(--code-bg);
+  border-radius: 4px;
+  overflow-x: auto;
+}
+.frac { display: inline-flex; flex-direction: column; vertical-align: middle; text-align: center; margin: 0 .15em; }
+.frac > span:first-child { border-bottom: 1px solid currentColor; padding: 0 .2em; }
+.frac > span:last-child { padding: 0 .2em; }
+
+/* Tabelas */
+.table-wrap { overflow-x: auto; margin: 1rem 0; }
+table { border-collapse: collapse; font-variant-numeric: tabular-nums; margin: 0 auto; font-size: .95rem; }
+th, td { padding: .25rem .8rem; text-align: right; }
+th { font-weight: 400; font-style: italic; border-bottom: 1px solid var(--fg); }
+td:first-child, th:first-child { text-align: left; }
+tr.total td { border-top: 1px solid var(--fg); font-weight: 600; }
+tr.hl td { background: var(--note-bg); }
+caption { caption-side: bottom; color: var(--muted); font-size: .85rem; padding-top: .4rem; font-style: italic; }
+
+ol.steps { padding-left: 1.3rem; }
+ol.steps li { margin: .35rem 0; }
+
+/* Navegação */
+nav.lesson-nav {
+  display: flex; justify-content: space-between; gap: 1rem;
+  border-top: 1px solid var(--rule);
+  margin-top: 3rem; padding-top: 1rem; font-size: .95rem;
+}
+nav.crumbs { font-size: .85rem; color: var(--muted); margin-bottom: 1.5rem; }
+
+/* Quiz (assets/quiz.js) */
+.quiz, .num {
+  border: 1px solid var(--rule);
+  border-radius: 6px;
+  padding: .8rem 1rem;
+  margin: 1.2rem 0;
+}
+.quiz .q, .num .q { margin: 0 0 .6rem; }
+.quiz .opts { display: grid; gap: .4rem; }
+.quiz button, .num button {
+  font: inherit;
+  text-align: left;
+  background: transparent;
+  color: var(--fg);
+  border: 1px solid var(--rule);
+  border-radius: 4px;
+  padding: .4rem .7rem;
+  cursor: pointer;
+}
+.quiz button:hover, .num button:hover { border-color: var(--accent); }
+.quiz button.right { background: var(--ok-bg); border-color: var(--ok); }
+.quiz button.wrong { background: var(--bad-bg); border-color: var(--bad); }
+.num .row { display: flex; gap: .5rem; flex-wrap: wrap; align-items: center; }
+.num input {
+  font: inherit;
+  width: 9rem;
+  padding: .35rem .5rem;
+  background: var(--bg);
+  color: var(--fg);
+  border: 1px solid var(--rule);
+  border-radius: 4px;
+}
+.fb { margin: .6rem 0 0; font-size: .95rem; min-height: 1em; }
+.fb.ok { color: var(--ok); }
+.fb.no { color: var(--bad); }
+
+details { margin: 1rem 0; }
+details summary { cursor: pointer; color: var(--accent); }
+details > *:not(summary) { margin-left: 1rem; }
+
+/* Índice */
+ul.toc { list-style: none; padding: 0; }
+ul.toc li { padding: .5rem 0; border-bottom: 1px solid var(--rule); }
+ul.toc .n { font-variant-numeric: tabular-nums; color: var(--muted); margin-right: .6rem; }
+ul.toc small { display: block; color: var(--muted); }
+
+@media print {
+  :root { --bg: #fff; --fg: #000; --note-bg: #f4f4f4; --code-bg: #f4f4f4; }
+  html { font-size: 11pt; }
+  main { max-width: none; padding: 0; }
+  nav.lesson-nav, .quiz, .num, .ask { display: none; }
+  h2 { break-after: avoid; }
+  table, .formula { break-inside: avoid; }
+}
+
+/* Histogramas em SVG inline (gerados com as mesmas classes em todas as páginas) */
+figure.chart { margin: 1.4rem 0; }
+figure.chart figcaption { color: var(--muted); font-size: .85rem; font-style: italic; text-align: center; margin-top: .3rem; }
+svg.hist { width: 100%; height: auto; display: block; }
+svg.hist rect { fill: var(--accent); fill-opacity: .78; stroke: var(--bg); stroke-width: 1.5; }
+svg.hist .grid { stroke: var(--rule); stroke-width: 1; }
+svg.hist .axis { stroke: var(--fg); stroke-width: 1; }
+svg.hist text { fill: var(--muted); font-family: inherit; font-size: 12px; }
+svg.hist .val { fill: var(--fg); font-size: 12px; }
+svg.hist .lab { font-style: italic; font-size: 13px; }

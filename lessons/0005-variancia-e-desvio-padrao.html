@@ -1,0 +1,125 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Lição 5 — Variância e desvio-padrão</title>
+<link rel="stylesheet" href="../assets/style.css">
+</head>
+<body>
+<main>
+<nav class="crumbs"><a href="../index.html">Início</a> › Lista 2 › Lição 5</nav>
+
+<p class="kicker">Lição 5 · Lista 2 · Questões 1 e 5</p>
+<h1>Variância e desvio-padrão</h1>
+<p class="subtitle">A média diz onde os dados estão; o desvio-padrão diz o quanto eles se espalham em volta dela.</p>
+
+<div class="mission">
+  <p><strong>Por que isso importa para a sua missão:</strong> todas as cinco questões da Lista 2 pedem desvio-padrão. Aqui você aprende com dados soltos (Questões 1 e 5); na Lição 6 a mesma ideia vai para tabelas em classes.</p>
+</div>
+
+<p class="win"><strong>Sua vitória nesta lição:</strong> montar a tabela de desvios e calcular o desvio-padrão à mão, sabendo se divide por n ou por n − 1.</p>
+
+<h2>1. Antes: mediana com n par</h2>
+<p>A Lista 2 tem n = 10 nas Questões 1 e 5, e 10 é par. Não existe um único elemento central: a mediana é a <strong>média dos dois do meio</strong>, nas posições n/2 = 5 e n/2 + 1 = 6 (<a href="0002-media-mediana-moda.html">Lição 2</a>).</p>
+<p>Questão 5, em rol: 40, 49, 52, 54, <strong>59, 67</strong>, 67, 67, 70, 71</p>
+<p class="formula">Md = (59 + 67) ÷ 2 = 63 &emsp; x̄ = 596 ÷ 10 = 59,6 &emsp; Mo = 67</p>
+
+<h2>2. A ideia do desvio-padrão</h2>
+<p>Para cada valor, meça o quanto ele se afasta da média: o <strong>desvio</strong> (xᵢ − x̄). Só que somar os desvios dá sempre zero, porque os negativos cancelam os positivos. A solução é <strong>elevar ao quadrado</strong> antes de somar <a href="https://openstax.org/books/introductory-statistics-2e/pages/2-7-measures-of-the-spread-of-the-data">(OpenStax, §2.7)</a>.</p>
+<ul>
+  <li><strong>Variância</strong>: a média dos desvios ao quadrado. Fica em "unidade ao quadrado" (bactérias², %²).</li>
+  <li><strong>Desvio-padrão</strong>: a raiz da variância, que volta para a unidade original dos dados.</li>
+</ul>
+
+<h3>n ou n − 1?</h3>
+<div class="table-wrap"><table>
+  <tr><th>Os dados são…</th><th style="text-align:left">Variância</th><th style="text-align:left">Símbolo</th></tr>
+  <tr><td>a população inteira</td><td style="text-align:left">Σ(xᵢ − x̄)² ÷ <strong>n</strong></td><td style="text-align:left">σ², σ</td></tr>
+  <tr><td>uma amostra</td><td style="text-align:left">Σ(xᵢ − x̄)² ÷ <strong>(n − 1)</strong></td><td style="text-align:left">s², s</td></tr>
+</table></div>
+<p>Uma amostra quase nunca pega os valores mais extremos da população, então tende a <em>subestimar</em> o espalhamento. Dividir por n − 1 corrige isso. O OpenStax e o <a href="https://www.itl.nist.gov/div898/handbook/eda/section3/eda356.htm">manual de estatística do NIST</a> usam n − 1 como padrão.</p>
+<div class="note"><p><strong>Na Lista 2:</strong> a Questão 5 fala em "10 porções de água do mar", uma amostra, então use <strong>s</strong> (n − 1). A lista não diz qual fórmula quer nas outras questões; o gabarito mostra as duas. Pergunte ao professor qual ele espera.</p></div>
+
+<h2>3. Exemplo resolvido: Questão 5</h2>
+<div class="table-wrap"><table>
+  <tr><th>xᵢ</th><th>xᵢ − x̄</th><th>(xᵢ − x̄)²</th></tr>
+  <tr><td>40</td><td>−19,6</td><td>384,16</td></tr>
+  <tr><td>49</td><td>−10,6</td><td>112,36</td></tr>
+  <tr><td>52</td><td>−7,6</td><td>57,76</td></tr>
+  <tr><td>54</td><td>−5,6</td><td>31,36</td></tr>
+  <tr><td>59</td><td>−0,6</td><td>0,36</td></tr>
+  <tr><td>67 (×3)</td><td>7,4</td><td>3 × 54,76 = 164,28</td></tr>
+  <tr><td>70</td><td>10,4</td><td>108,16</td></tr>
+  <tr><td>71</td><td>11,4</td><td>129,96</td></tr>
+  <tr class="total"><td>Σ</td><td>0</td><td>988,40</td></tr>
+  <caption>x̄ = 59,6. A coluna do meio somar 0 é a sua conferência.</caption>
+</table></div>
+<ol class="steps">
+  <li>Variância amostral: s² = 988,4 ÷ (10 − 1) = 988,4 ÷ 9 ≈ <strong>109,82</strong> (bactérias/100 mL)².</li>
+  <li>Desvio-padrão amostral: s = √109,82 ≈ <strong>10,48</strong> bactérias/100 mL.</li>
+  <li>Se fosse população: σ² = 988,4 ÷ 10 = 98,84 e σ ≈ 9,94.</li>
+</ol>
+<p><strong>Interpretação:</strong> as porções de água ficam, tipicamente, a uns 10 microrganismos da média de 59,6.</p>
+
+<details>
+  <summary>Atalho para calculadora: a fórmula com Σx²</summary>
+  <p>Em vez de calcular cada desvio, some os valores e os quadrados:</p>
+  <p class="formula">Σ(xᵢ − x̄)² = Σxᵢ² − <span class="frac"><span>(Σxᵢ)²</span><span>n</span></span></p>
+  <p>Na Questão 5: Σx² = 36 510 e Σx = 596, então 36 510 − 596²/10 = 36 510 − 35 521,6 = 988,4. Mesmo resultado, menos contas quando a média não é "redonda".</p>
+</details>
+
+<h2>Pratique com a Questão 1</h2>
+<p>Taxas: 2,59 · 2,64 · 2,60 · 2,62 · 2,55 · 2,61 · 2,50 · 2,63 · 2,64 · 2,69. Faça no papel, depois confira.</p>
+
+<div class="num" data-answer="2.607" data-tol="0.0005" data-hint="Σx = 26,07; divida por 10." data-why="26,07 ÷ 10 = 2,607%.">
+  <p class="q">1) Taxa média (três casas decimais):</p>
+  <div class="row"><input inputmode="decimal" aria-label="resposta"><button>Conferir</button></div>
+  <p class="fb"></p>
+</div>
+
+<div class="num" data-answer="2.615" data-tol="0.0005" data-hint="Ordene: n = 10 é par, então tire a média dos elementos nas posições 5 e 6." data-why="Rol: 2,50 2,55 2,59 2,60 2,61 2,62 … → (2,61 + 2,62) ÷ 2 = 2,615%.">
+  <p class="q">2) Taxa mediana:</p>
+  <div class="row"><input inputmode="decimal" aria-label="resposta"><button>Conferir</button></div>
+  <p class="fb"></p>
+</div>
+
+<div class="num" data-answer="2.64" data-tol="0.0005" data-hint="Qual taxa aparece mais de uma vez?" data-why="2,64% aparece duas vezes (ações 02 e 09).">
+  <p class="q">3) Taxa modal:</p>
+  <div class="row"><input inputmode="decimal" aria-label="resposta"><button>Conferir</button></div>
+  <p class="fb"></p>
+</div>
+
+<div class="num" data-answer="0.0525" data-tol="0.0006" data-hint="Σ(xᵢ − 2,607)² = 0,02481. Divida por 9 e tire a raiz." data-why="s² = 0,02481 ÷ 9 ≈ 0,002757 e s ≈ 0,0525 ponto percentual. (Populacional: σ ≈ 0,0498.)">
+  <p class="q">4) Desvio-padrão amostral das taxas (quatro casas):</p>
+  <div class="row"><input inputmode="decimal" aria-label="resposta"><button>Conferir</button></div>
+  <p class="fb"></p>
+</div>
+
+<div class="quiz" data-answer="b">
+  <p class="q">5) Por que se eleva cada desvio ao quadrado?</p>
+  <div class="opts">
+    <button data-opt="a" data-why="O quadrado até aumenta os números; o motivo é outro.">Para deixar os números finais bem menores</button>
+    <button data-opt="b" data-why="Sem o quadrado, desvios negativos e positivos se cancelam e a soma dá zero.">Para os desvios negativos não cancelarem positivos</button>
+    <button data-opt="c" data-why="A unidade fica ao quadrado, por isso depois tiramos a raiz.">Para manter a mesma unidade dos dados</button>
+  </div>
+  <p class="fb"></p>
+</div>
+
+<div class="source">
+  <p><strong>Fonte principal recomendada:</strong> <a href="https://openstax.org/books/introductory-statistics-2e/pages/2-7-measures-of-the-spread-of-the-data">OpenStax, <em>Introductory Statistics 2e</em>, §2.7 — Measures of the Spread of the Data</a>. Leia a parte sobre <em>sample vs population standard deviation</em>.</p>
+</div>
+
+<div class="ask"><p>A ideia do n − 1 ainda parece mágica? Peça ao seu agente uma simulação ou outro exemplo.</p></div>
+
+<p>Resumo: <a href="../reference/formulario.html#dispersao">Formulário › Dispersão</a>.</p>
+
+<nav class="lesson-nav">
+  <a href="0004-mediana-e-moda-em-classes.html">← Lição 4</a>
+  <a href="0006-dispersao-em-classes.html">Lição 6: dispersão em classes →</a>
+</nav>
+</main>
+<script src="../assets/quiz.js"></script>
+<script src="../assets/print-details.js"></script>
+</body>
+</html>

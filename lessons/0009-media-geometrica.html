@@ -1,0 +1,93 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Lição 9 — Média geométrica</title>
+<link rel="stylesheet" href="../assets/style.css">
+</head>
+<body>
+<main>
+<nav class="crumbs"><a href="../index.html">Início</a> › Lista 3 › Lição 9</nav>
+
+<p class="kicker">Lição 9 · Lista 3 · Questões 5(a) e 6(a)</p>
+<h1>Média geométrica</h1>
+<p class="subtitle">A média que preserva o produto, e o truque do logaritmo para calculá-la à mão.</p>
+
+<div class="mission">
+  <p><strong>Por que isso importa para a sua missão:</strong> as Questões 5 e 6 pedem a média geométrica com dados em classes. Com 50 ou 60 valores, multiplicar tudo é inviável; com logaritmo, vira uma tabela igual às que você já monta.</p>
+</div>
+
+<p class="win"><strong>Sua vitória nesta lição:</strong> calcular a média geométrica de uma tabela de classes usando uma coluna de logaritmos.</p>
+
+<h2>1. A ideia</h2>
+<p>A média aritmética responde "que valor único daria a mesma <em>soma</em>?". A média geométrica responde "que valor único daria o mesmo <em>produto</em>?" <a href="https://openstax.org/books/introductory-business-statistics-2e/pages/2-5-geometric-mean">(OpenStax, <em>Business Statistics</em> §2.5)</a>.</p>
+<p class="formula">G = <sup>n</sup>√(x₁ · x₂ · … · xₙ)</p>
+<p>Exemplo pequeno: de 2 e 8, G = √(2 · 8) = √16 = 4, enquanto a média aritmética é 5. A média geométrica é sempre menor ou igual à aritmética (só é igual quando todos os valores são iguais).</p>
+
+<h2>2. O truque do logaritmo</h2>
+<p>O log transforma produto em soma e raiz em divisão. Então a média geométrica vira a <em>média aritmética dos logaritmos</em>, desfeita no fim com 10<sup>x</sup>:</p>
+<p class="formula">log G = <span class="frac"><span>Σ fᵢ · log xᵢ</span><span>n</span></span> &emsp;⇒&emsp; G = 10<sup>log G</sup></p>
+<p>Em tabela de classes, xᵢ é o ponto médio, como sempre (<a href="0003-media-de-dados-agrupados.html">Lição 3</a>). Só funciona com valores positivos.</p>
+
+<h2>3. Exemplo resolvido: Questão 5 (chuva)</h2>
+<p>Classes da <a href="0008-montando-classes-e-histograma.html">Lição 8</a> (h = 4 a partir de 13):</p>
+<div class="table-wrap"><table>
+  <tr><th>Classe (mm)</th><th>xᵢ</th><th>fᵢ</th><th>log xᵢ</th><th>fᵢ · log xᵢ</th></tr>
+  <tr><td>13 ├ 17</td><td>15</td><td>5</td><td>1,1761</td><td>5,8805</td></tr>
+  <tr><td>17 ├ 21</td><td>19</td><td>5</td><td>1,2788</td><td>6,3938</td></tr>
+  <tr><td>21 ├ 25</td><td>23</td><td>6</td><td>1,3617</td><td>8,1704</td></tr>
+  <tr><td>25 ├ 29</td><td>27</td><td>14</td><td>1,4314</td><td>20,0391</td></tr>
+  <tr><td>29 ├ 33</td><td>31</td><td>10</td><td>1,4914</td><td>14,9136</td></tr>
+  <tr><td>33 ├ 37</td><td>35</td><td>6</td><td>1,5441</td><td>9,2644</td></tr>
+  <tr><td>37 ├ 41</td><td>39</td><td>4</td><td>1,5911</td><td>6,3643</td></tr>
+  <tr class="total"><td>Σ</td><td></td><td>50</td><td></td><td>71,0260</td></tr>
+</table></div>
+<ol class="steps">
+  <li>log G = 71,0260 ÷ 50 = 1,42052.</li>
+  <li>G = 10<sup>1,42052</sup> ≈ <strong>26,33 mm</strong>.</li>
+  <li>Conferência: a média aritmética da mesma tabela é 27,24 mm, e G ficou abaixo dela, como deve ser.</li>
+</ol>
+<div class="note"><p><strong>Na calculadora:</strong> use a tecla <em>log</em> (base 10) e, no fim, <em>10<sup>x</sup></em> (geralmente shift + log). Guarde pelo menos 4 casas nos logs, porque o erro cresce ao elevar 10 à potência.</p></div>
+
+<h2>Pratique: Questão 6 (tempo do pedreiro)</h2>
+<p>Classes de h = 5 a partir de 20: pontos médios 22,5 · 27,5 · 32,5 · 37,5 · 42,5 · 47,5 com fᵢ = 5 · 10 · 13 · 22 · 5 · 5.</p>
+
+<div class="num" data-answer="34.6287" data-tol="0.002" data-hint="log 37,5 ≈ 1,5740. Multiplique por fᵢ = 22." data-why="22 × 1,5740 ≈ 34,629.">
+  <p class="q">1) Quanto vale fᵢ · log xᵢ na classe 35 ├ 40? (quatro casas)</p>
+  <div class="row"><input inputmode="decimal" aria-label="resposta"><button>Conferir</button></div>
+  <p class="fb"></p>
+</div>
+
+<div class="num" data-answer="34.10" data-tol="0.02" data-hint="Σ fᵢ log xᵢ ≈ 91,9628. Divida por 60 e faça 10 elevado ao resultado." data-why="log G ≈ 1,53271, e G ≈ 34,10 minutos (a média aritmética é 34,75).">
+  <p class="q">2) Média geométrica da Questão 6 (duas casas):</p>
+  <div class="row"><input inputmode="decimal" aria-label="resposta"><button>Conferir</button></div>
+  <p class="fb"></p>
+</div>
+
+<div class="quiz" data-answer="a">
+  <p class="q">3) Você calculou G = 36,2 para a Questão 6, cuja média aritmética é 34,75. O que isso indica?</p>
+  <div class="opts">
+    <button data-opt="a" data-why="G nunca passa da média aritmética. Revise a coluna de logs ou o 10ˣ final.">Que houve algum erro de conta no cálculo</button>
+    <button data-opt="b" data-why="A propriedade G ≤ x̄ vale para quaisquer valores positivos.">Que os dados da questão são muito assimétricos</button>
+    <button data-opt="c" data-why="Usar ponto médio não faz G passar da média aritmética.">Que os pontos médios foram escolhidos de propósito</button>
+  </div>
+  <p class="fb"></p>
+</div>
+
+<div class="source">
+  <p><strong>Fonte principal recomendada:</strong> <a href="https://openstax.org/books/introductory-business-statistics-2e/pages/2-5-geometric-mean">OpenStax, <em>Introductory Business Statistics 2e</em>, §2.5 — Geometric Mean</a>. Curta, com o exemplo do produto "redistribuído".</p>
+</div>
+
+<div class="ask"><p>Onde a média geométrica aparece de verdade? Taxas de crescimento, juros compostos, benchmarks de desempenho. Peça ao seu agente um exemplo de engenharia de software.</p></div>
+
+<p>Resumo: <a href="../reference/formulario.html#assimetria">Formulário › Lista 3</a>.</p>
+
+<nav class="lesson-nav">
+  <a href="0008-montando-classes-e-histograma.html">← Lição 8</a>
+  <a href="0010-homogeneidade-e-assimetria.html">Lição 10: homogeneidade e assimetria →</a>
+</nav>
+</main>
+<script src="../assets/quiz.js"></script>
+</body>
+</html>
